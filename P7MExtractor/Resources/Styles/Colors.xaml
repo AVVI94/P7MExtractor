@@ -1,0 +1,69 @@
+﻿<ResourceDictionary xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+                    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+
+    <!-- nadpisy, zvolené tab, zvolený jazyk, ... -->
+    <SolidColorBrush x:Key="DarkBlue"
+                     Color="#0f2aab" />
+    <!-- TextBox placeholder -->
+    <SolidColorBrush x:Key="DarkBlueWithOpacity"
+                     Color="#0f2aab"
+                     Opacity="0.7" />
+    <!-- Část úvodního titulku,(nejspíše bude třeba tuhle barvu nastavit i jako accent color -> používá se při v checkboxech, když jsou zaškrklé; 
+                 volba typu pečetě-->
+    <SolidColorBrush x:Key="Teal"
+                     Color="#3fcfc7" />
+    <!-- při výběru certifikátu při najetí na daný cert -->
+    <SolidColorBrush x:Key="GhostWhite"
+                     Color="#f7f7fd" />
+    <!-- Barva písma -->
+    <SolidColorBrush x:Key="DimGray"
+                     Color="#737373" />
+    <!-- Pozadí některých tlačítek, border brush tlačítek na volbu certifikátu a typu pečetě -->
+    <SolidColorBrush x:Key="Lavender"
+                     Color="#dfe2f6" />
+    <!-- Pozadí comboxů, textboxů,... -->
+    <SolidColorBrush x:Key="MyWhiteSmoke"
+                     Color="#f0f0fa" />
+    <!-- Barva některých ikon (uvnitř tlačítek) -->
+    <SolidColorBrush x:Key="MediumTurquoise"
+                     Color="#3ac0b9" />
+    <!-- Barva error ikon -->
+    <SolidColorBrush x:Key="MySalmon"
+                     Color="#f15a6d" />
+    <!-- Barvou se přebarví hlavní okno při zobrazení dialogu (netuším jestli půjde nastavit) -->
+    <SolidColorBrush x:Key="MyDarkGray"
+                     Color="#a0a7c7" />
+    <!-- texty tlačítek -->
+    <SolidColorBrush x:Key="MyWhite"
+                     Color="#ffffff" />
+    <!-- Text pro zobrazení datumu expirace certu -->
+    <SolidColorBrush x:Key="ToreaBay"
+                     Color="#8C96D0" />
+    <SolidColorBrush x:Key="Transparent"
+                     Color="#00ffffff" />
+    <SolidColorBrush x:Key="CheckBoxBorderBrushBlue"
+                     Color="#C3C6E6" />
+    <SolidColorBrush x:Key="DarkerTeal"
+                     Color="#32bab3" />
+    <SolidColorBrush x:Key="ErrorRed"
+                     Color="#F15A6D" />
+    <SolidColorBrush x:Key="LightBlue"
+                     Color="#A3A8D0" />
+    <SolidColorBrush x:Key="FileToSealTextColor"
+                     Color="#112372" />
+    <SolidColorBrush x:Key="Gainsboro"
+                     Color="#d7daeb" />
+    <SolidColorBrush x:Key="LightSteelBlue"
+                     Color="#bfc1dd" />
+    <SolidColorBrush x:Key="ErrorBtnIsMouseOver"
+                     Color="#ff8d9b" />
+    <SolidColorBrush x:Key="ErrorBtnIsPressed"
+                     Color="#b92342" />
+
+    <Color x:Key="DarkBlueColor">#0f2aab</Color>
+    <Color x:Key="TealColor">#3fcfc7</Color>
+    <Color x:Key="DarkTealColor">#32bab3</Color>
+
+
+
+</ResourceDictionary>

@@ -1,0 +1,2789 @@
+﻿<ResourceDictionary xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+                    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+                    xmlns:local="clr-namespace:P7MExtractor.Resources"
+                    xmlns:ui="http://schemas.modernwpf.com/2019">
+
+    <!-- TextBlocks -->
+    <Style TargetType="TextBlock"
+           x:Key="TextBlockBase">
+        <Setter Property="TextWrapping"
+                Value="Wrap" />
+        <Setter Property="FontWeight"
+                Value="Normal" />
+        <Setter Property="FontSize"
+                Value="14" />
+        <Setter Property="VerticalAlignment"
+                Value="Center" />
+    </Style>
+
+    <!-- Titles -->
+    <Style TargetType="TextBlock"
+           x:Key="H1_DarkBlue"
+           BasedOn="{StaticResource TextBlockBase}">
+        <Setter Property="Foreground"
+                Value="{StaticResource DarkBlue}" />
+        <Setter Property="FontWeight"
+                Value="600" />
+        <Setter Property="FontSize"
+                Value="44" />
+        <Setter Property="Margin"
+                Value="5,6" />
+    </Style>
+
+    <!-- Part of title on Frame 1 -->
+    <Style TargetType="TextBlock"
+           x:Key="H1_Teal"
+           BasedOn="{StaticResource H1_DarkBlue}">
+        <Setter Property="Foreground"
+                Value="{StaticResource Teal}" />
+    </Style>
+
+    <!-- Paragraph -->
+    <Style TargetType="TextBlock"
+           x:Key="P"
+           BasedOn="{StaticResource TextBlockBase}">
+        <Setter Property="Foreground"
+                Value="{StaticResource DimGray}" />
+        <Setter Property="FontSize"
+                Value="16" />
+        <Setter Property="Margin"
+                Value="5,4" />
+    </Style>
+
+    <Style TargetType="TextBlock"
+           x:Key="P_DarkBlue"
+           BasedOn="{StaticResource P}">
+        <Setter Property="Foreground"
+                Value="{StaticResource DarkBlue}" />
+    </Style>
+
+    <!-- Smaller titles (certificate selection, seal type selection, ...) -->
+    <Style TargetType="TextBlock"
+           x:Key="H4"
+           BasedOn="{StaticResource TextBlockBase}">
+        <Setter Property="Foreground"
+                Value="{StaticResource DarkBlue}" />
+        <Setter Property="FontSize"
+                Value="18" />
+        <Setter Property="Margin"
+                Value="5,7" />
+    </Style>
+
+    <!-- Cert expiration date -->
+    <Style TargetType="TextBlock"
+           x:Key="LighBlueText"
+           BasedOn="{StaticResource TextBlockBase}">
+        <Setter Property="FontSize"
+                Value="12" />
+        <Setter Property="Margin"
+                Value="5,6" />
+        <Setter Property="Foreground"
+                Value="{StaticResource ToreaBay}" />
+    </Style>
+
+    <!-- Small titles for sections in Parameters of your seal -->
+    <Style TargetType="TextBlock"
+           x:Key="DarkBlueText"
+           BasedOn="{StaticResource LighBlueText}">
+        <Setter Property="Foreground"
+                Value="{StaticResource DarkBlue}" />
+    </Style>
+
+    <!-- Selected Language, Current step of seal proccess, administration access, edit seal type, used cert CN -->
+    <Style TargetType="TextBlock"
+           x:Key="SubtleTextBlue"
+           BasedOn="{StaticResource DarkBlueText}">
+        <Setter Property="FontSize"
+                Value="14" />
+        <Setter Property="FontWeight"
+                Value="400" />
+        <Setter Property="Margin"
+                Value="5,3" />
+    </Style>
+
+    <!-- Nonselected languages and steps, ... -->
+    <Style TargetType="TextBlock"
+           x:Key="SubtleTextGray"
+           BasedOn="{StaticResource SubtleTextBlue}">
+        <Setter Property="Foreground"
+                Value="{StaticResource DimGray}" />
+    </Style>
+
+    <!-- Error texts in window for setting location of visible signature -->
+    <Style TargetType="TextBlock"
+           x:Key="SubtleTextRed"
+           BasedOn="{StaticResource SubtleTextBlue}">
+        <Setter Property="Foreground"
+                Value="{StaticResource ErrorRed}" />
+    </Style>
+
+    <!-- Used in info dialogs as title part -->
+    <Style TargetType="TextBlock"
+           x:Key="H2"
+           BasedOn="{StaticResource TextBlockBase}">
+        <Setter Property="Foreground"
+                Value="{StaticResource DarkBlue}" />
+        <Setter Property="FontWeight"
+                Value="600" />
+        <Setter Property="FontSize"
+                Value="34" />
+        <Setter Property="TextAlignment"
+                Value="Center" />
+        <Setter Property="Margin"
+                Value="5,4" />
+    </Style>
+
+    <!-- Used in error dialogs as a title -->
+    <Style TargetType="TextBlock"
+           x:Key="H2_Red"
+           BasedOn="{StaticResource H2}">
+        <Setter Property="Foreground"
+                Value="{StaticResource ErrorRed}" />
+    </Style>
+
+    <!-- Used in dialogs as a message part -->
+    <Style TargetType="TextBlock"
+           x:Key="P_TextAlignCenter"
+           BasedOn="{StaticResource P}">
+        <Setter Property="TextAlignment"
+                Value="Center" />
+    </Style>
+
+    <!-- Buttons -->
+
+    <Style TargetType="Button"
+           BasedOn="{StaticResource AccentButtonStyle}"
+           x:Key="ButtonBase">
+        <Setter Property="FontSize"
+                Value="14" />
+        <Setter Property="FontWeight"
+                Value="600" />
+        <Setter Property="Height"
+                Value="48" />
+        <Setter Property="Margin"
+                Value="5" />
+        <Setter Property="VerticalContentAlignment"
+                Value="Center" />
+        <Setter Property="Padding"
+                Value="10,2,10,2" />
+        <Setter Property="ui:FocusVisualHelper.UseSystemFocusVisuals"
+                Value="True" />
+        <Setter Property="ui:FocusVisualHelper.FocusVisualMargin"
+                Value="-3" />
+        <Setter Property="ui:FocusVisualHelper.FocusVisualPrimaryBrush"
+                Value="{StaticResource Teal}" />
+        <Setter Property="ui:FocusVisualHelper.FocusVisualSecondaryBrush"
+                Value="{StaticResource Teal}" />
+    </Style>
+
+    <!-- For Buttons Browse in document selection, ADD NEW in Seal type selection, CLOSE in seal procces, CANCEL -->
+    <!-- Create button like this:
+        <Button ....>
+            <DockPanel>
+                <Image Source="Desired/Image/Path.png"/> or if you want to use predefined path as icon <ContentPresenter Content="{StaticResource ViewBoxWithPathKey}"
+                <TextBlock Source="Desired text"/> 
+            </DockPanel>
+        </Button>
+    -->
+    <Style TargetType="Button"
+           BasedOn="{StaticResource ButtonBase}"
+           x:Key="ButtonWithDarkBlueIcon">
+        <Setter Property="Background"
+                Value="{StaticResource Lavender}" />
+        <Setter Property="Foreground"
+                Value="{StaticResource DarkBlue}" />
+    </Style>
+
+    <!-- Style for Image inside button with style ButtonWithDarkBlueIcon -->
+    <Style TargetType="Image"
+           x:Key="ImageInsideButton">
+        <Setter Property="Width"
+                Value="24" />
+        <Setter Property="Height"
+                Value="24" />
+        <Setter Property="Margin"
+                Value="0,5,5,5" />
+    </Style>
+
+    <!-- Style for ContentPresenter inside button with style ButtonWithDarkBlueIcon -->
+    <Style TargetType="ContentPresenter"
+           x:Key="ContentPresenterInsideButton">
+        <Setter Property="Width"
+                Value="24" />
+        <Setter Property="Height"
+                Value="24" />
+        <Setter Property="Margin"
+                Value="0,5,5,5" />
+    </Style>
+
+    <!-- Style for Textblock inside button with style ButtonWithDarkBlueIcon -->
+    <Style TargetType="TextBlock"
+           x:Key="TextBlockInsideButton">
+        <Setter Property="Margin"
+                Value="5" />
+        <Setter Property="VerticalAlignment"
+                Value="Center" />
+        <Setter Property="FontFamily"
+                Value="{StaticResource CentralFont}" />
+    </Style>
+
+    <!-- Used for Buttons located in TextBox -->
+    <Style TargetType="Button"
+           x:Key="ButtonInsideTextBox"
+           BasedOn="{StaticResource ButtonBase}">
+        <Setter Property="Background"
+                Value="{StaticResource Transparent}" />
+        <Setter Property="BorderBrush"
+                Value="{StaticResource Transparent}" />
+        <Setter Property="ui:FocusVisualHelper.UseSystemFocusVisuals"
+                Value="True" />
+        <Setter Property="ui:FocusVisualHelper.FocusVisualMargin"
+                Value="3,1.5,4,-1.5" />
+        <Setter Property="ui:FocusVisualHelper.FocusVisualPrimaryBrush"
+                Value="{StaticResource Teal}" />
+        <Setter Property="ui:FocusVisualHelper.FocusVisualSecondaryBrush"
+                Value="{StaticResource Teal}" />
+        <Setter Property="ui:FocusVisualHelper.FocusVisualPrimaryThickness"
+                Value="1" />
+        <Setter Property="ui:FocusVisualHelper.FocusVisualSecondaryThickness"
+                Value="1" />
+        <Setter Property="HorizontalAlignment"
+                Value="Right" />
+        <Setter Property="VerticalContentAlignment"
+                Value="Center" />
+        <Setter Property="Margin"
+                Value="0,0,0,20" />
+        <Setter Property="VerticalAlignment"
+                Value="Top" />
+        <Setter Property="Width"
+                Value="52" />
+        <Setter Property="Height"
+                Value="52" />
+        <Setter Property="Template">
+            <Setter.Value>
+                <ControlTemplate TargetType="{x:Type Button}">
+                    <Border HorizontalAlignment="Stretch"
+                            VerticalAlignment="Stretch">
+                        <Grid VerticalAlignment="Center"
+                              HorizontalAlignment="Center">
+                            <Path Name="PathOne"
+                                  Stroke="{DynamicResource DarkBlueWithOpacity}">
+                                <Path.Data>
+                                    <PathGeometry Figures="M21.8018 10L20.1654 19H15.7638L13.3093 10L21.8018 10Z"
+                                                  FillRule="NonZero" />
+                                </Path.Data>
+                            </Path>
+                            <Path Name="PathTwo"
+                                  Fill="{DynamicResource DarkBlueWithOpacity}">
+                                <Path.Data>
+                                    <PathGeometry Figures="M7.70647 4C8.17122 4 8.57471 4.32018 8.68031 4.77277L8.81969 5.37009C8.92529 5.82268 9.32878 6.14286 9.79353 6.14286L17.6024 6.14286C18.113 6.14286 18.5416 6.52757 18.5966 7.03524L20 20L3 20L1 4L7.70647 4Z"
+                                                  FillRule="NonZero" />
+                                </Path.Data>
+                            </Path>
+                        </Grid>
+                    </Border>
+                    <ControlTemplate.Triggers>
+                        <Trigger Property="IsMouseOver"
+                                 Value="True">
+                            <Setter TargetName="PathOne"
+                                    Property="Fill"
+                                    Value="{StaticResource DarkBlue}" />
+                            <Setter TargetName="PathTwo"
+                                    Property="Fill"
+                                    Value="{StaticResource DarkBlue}" />
+                        </Trigger>
+                        <Trigger Property="IsPressed"
+                                 Value="True">
+                            <Setter TargetName="PathOne"
+                                    Property="Fill"
+                                    Value="{StaticResource Teal}" />
+                            <Setter TargetName="PathTwo"
+                                    Property="Fill"
+                                    Value="{StaticResource Teal}" />
+                        </Trigger>
+                        <Trigger Property="IsEnabled"
+                                 Value="False">
+                            <Setter TargetName="PathOne"
+                                    Property="Fill"
+                                    Value="{StaticResource DimGray}" />
+                            <Setter TargetName="PathTwo"
+                                    Property="Fill"
+                                    Value="{StaticResource DimGray}" />
+                        </Trigger>
+                    </ControlTemplate.Triggers>
+                </ControlTemplate>
+            </Setter.Value>
+        </Setter>
+    </Style>
+
+    <!-- Used in dialogs -->
+    <Style TargetType="Button"
+           BasedOn="{StaticResource ButtonBase}"
+           x:Key="DarkBlueButtonWithoutIcon">
+        <Setter Property="Foreground"
+                Value="{StaticResource MyWhite}" />
+        <Setter Property="Background"
+                Value="{StaticResource DarkBlue}" />
+        <Setter Property="VerticalContentAlignment"
+                Value="Center" />
+        <Style.Triggers>
+            <Trigger Property="IsEnabled"
+                     Value="False">
+                <Setter Property="Background"
+                        Value="{StaticResource MyWhiteSmoke}" />
+                <Setter Property="Foreground"
+                        Value="{StaticResource DarkBlue}" />
+                <Setter Property="Opacity"
+                        Value="0.6" />
+            </Trigger>
+        </Style.Triggers>
+    </Style>
+
+    <Style TargetType="Button"
+           BasedOn="{StaticResource DarkBlueButtonWithoutIcon}"
+           x:Key="ErrorRedButton">
+        <Setter Property="Background"
+                Value="{DynamicResource ErrorRed}" />
+        <Setter Property="Template">
+            <Setter.Value>
+                <ControlTemplate TargetType="{x:Type Button}">
+                    <Border Width="{TemplateBinding Width}"
+                            Height="{TemplateBinding Height}"
+                            Background="{TemplateBinding Background}"
+                            Padding="{TemplateBinding Padding}"
+                            BorderBrush="{StaticResource Transparent}"
+                            BorderThickness="0"
+                            CornerRadius="3">
+                        <TextBlock Foreground="{TemplateBinding Foreground}"
+                                   FontSize="{TemplateBinding FontSize}"
+                                   VerticalAlignment="{TemplateBinding VerticalContentAlignment}"
+                                   FontWeight="{TemplateBinding FontWeight}">
+                            <ContentPresenter Content="{TemplateBinding Content}" />
+                        </TextBlock>
+                    </Border>
+                    <ControlTemplate.Triggers>
+                        <Trigger Property="IsMouseOver"
+                                 Value="True">
+                            <Setter Property="Background"
+                                    Value="{DynamicResource ErrorBtnIsMouseOver}" />
+                        </Trigger>
+                        <Trigger Property="IsPressed"
+                                 Value="True">
+                            <Setter Property="Background"
+                                    Value="{DynamicResource ErrorBtnIsPressed}" />
+                        </Trigger>
+                        <Trigger Property="IsEnabled"
+                                 Value="False">
+                            <Setter Property="Opacity"
+                                    Value="0.5" />
+                        </Trigger>
+                    </ControlTemplate.Triggers>
+                </ControlTemplate>
+            </Setter.Value>
+        </Setter>
+    </Style>
+
+    <!-- Used in seal select proccess -->
+    <Style x:Key="ButtonWithContinueIcon"
+           TargetType="{x:Type Button}"
+           BasedOn="{StaticResource ButtonBase}">
+        <Setter Property="OverridesDefaultStyle"
+                Value="True" />
+        <Setter Property="Background"
+                Value="{DynamicResource DarkBlue}" />
+        <Setter Property="Foreground"
+                Value="{DynamicResource MyWhite}" />
+        <Setter Property="FocusVisualStyle"
+                Value="{DynamicResource {x:Static SystemParameters.FocusVisualStyleKey}}" />
+        <Setter Property="ui:FocusVisualHelper.UseSystemFocusVisuals"
+                Value="True" />
+        <Setter Property="ui:FocusVisualHelper.FocusVisualMargin"
+                Value="-3" />
+        <Setter Property="ui:FocusVisualHelper.FocusVisualPrimaryBrush"
+                Value="{StaticResource Teal}" />
+        <Setter Property="ui:FocusVisualHelper.FocusVisualSecondaryBrush"
+                Value="{StaticResource Teal}" />
+        <Setter Property="ui:ControlHelper.CornerRadius"
+                Value="{DynamicResource ControlCornerRadius}" />
+        <Setter Property="Stylus.IsPressAndHoldEnabled"
+                Value="False" />
+        <Setter Property="Template">
+            <Setter.Value>
+                <ControlTemplate TargetType="{x:Type Button}">
+                    <Border x:Name="Background"
+                            Background="{TemplateBinding Background}"
+                            CornerRadius="{TemplateBinding ui:ControlHelper.CornerRadius}"
+                            SnapsToDevicePixels="True">
+                        <Border x:Name="Border"
+                                BorderBrush="{TemplateBinding BorderBrush}"
+                                BorderThickness="{TemplateBinding BorderThickness}"
+                                CornerRadius="{TemplateBinding ui:ControlHelper.CornerRadius}"
+                                Padding="{TemplateBinding Padding}">
+                            <DockPanel LastChildFill="True">
+                                <Canvas Width="24"
+                                        Height="24"
+                                        Margin="0,0,10,0">
+                                    <Canvas.RenderTransform>
+                                        <TranslateTransform X="0"
+                                                            Y="0" />
+                                    </Canvas.RenderTransform>
+                                    <Canvas.Resources />
+                                    <Ellipse Canvas.Left="2"
+                                             Canvas.Top="2"
+                                             Width="20"
+                                             Height="20"
+                                             Name="Circle"
+                                             StrokeThickness="2"
+                                             Stroke="{DynamicResource Teal}" />
+                                    <Path Name="ArrowPath"
+                                          StrokeThickness="2"
+                                          Stroke="{DynamicResource Teal}">
+                                        <Path.Data>
+                                            <PathGeometry Figures="M6 12H17M17 12L12 7M17 12L12 16.5"
+                                                          FillRule="NonZero" />
+                                        </Path.Data>
+                                    </Path>
+                                </Canvas>
+                                <ContentPresenter x:Name="ContentPresenter"
+                                                  ContentTemplate="{TemplateBinding ContentTemplate}"
+                                                  Content="{TemplateBinding Content}"
+                                                  ContentStringFormat="{TemplateBinding ContentStringFormat}"
+                                                  Focusable="False"
+                                                  HorizontalAlignment="{TemplateBinding HorizontalContentAlignment}"
+                                                  RecognizesAccessKey="True"
+                                                  SnapsToDevicePixels="{TemplateBinding SnapsToDevicePixels}"
+                                                  VerticalAlignment="{TemplateBinding VerticalContentAlignment}" />
+                            </DockPanel>
+                        </Border>
+                    </Border>
+                    <ControlTemplate.Triggers>
+                        <Trigger Property="IsMouseOver"
+                                 Value="True">
+                            <Setter Property="Background"
+                                    TargetName="Background"
+                                    Value="{DynamicResource Teal}" />
+                            <Setter Property="BorderBrush"
+                                    TargetName="Border"
+                                    Value="{DynamicResource Teal}" />
+                            <Setter Property="Foreground"
+                                    Value="{DynamicResource MyWhite}" />
+                            <Setter TargetName="Circle"
+                                    Property="Stroke"
+                                    Value="{DynamicResource DarkBlue}" />
+                            <Setter TargetName="ArrowPath"
+                                    Property="Stroke"
+                                    Value="{DynamicResource DarkBlue}" />
+                        </Trigger>
+                        <Trigger Property="IsPressed"
+                                 Value="True">
+                            <Setter Property="Background"
+                                    TargetName="Background"
+                                    Value="{DynamicResource DarkerTeal}" />
+                            <Setter TargetName="Circle"
+                                    Property="Stroke"
+                                    Value="{DynamicResource DarkBlue}" />
+                            <Setter TargetName="ArrowPath"
+                                    Property="Stroke"
+                                    Value="{DynamicResource DarkBlue}" />
+                        </Trigger>
+                        <Trigger Property="IsEnabled"
+                                 Value="False">
+                            <Setter Property="Background"
+                                    TargetName="Background"
+                                    Value="{DynamicResource MyWhiteSmoke}" />
+                            <Setter Property="BorderBrush"
+                                    TargetName="Border"
+                                    Value="{DynamicResource Transparent}" />
+                            <Setter Property="Foreground"
+                                    Value="{DynamicResource DarkBlue}" />
+                            <Setter TargetName="Circle"
+                                    Property="Stroke"
+                                    Value="{DynamicResource DarkBlue}" />
+                            <Setter TargetName="ArrowPath"
+                                    Property="Stroke"
+                                    Value="{DynamicResource DarkBlue}" />
+                        </Trigger>
+                    </ControlTemplate.Triggers>
+                </ControlTemplate>
+            </Setter.Value>
+        </Setter>
+    </Style>
+
+    <!-- Used in seal files proccess -->
+    <Style x:Key="ButtonWithSealIcon"
+           TargetType="{x:Type Button}"
+           BasedOn="{StaticResource ButtonBase}">
+        <Setter Property="OverridesDefaultStyle"
+                Value="True" />
+        <Setter Property="Background"
+                Value="{DynamicResource DarkBlue}" />
+        <Setter Property="Foreground"
+                Value="{DynamicResource MyWhite}" />
+        <Setter Property="FocusVisualStyle"
+                Value="{DynamicResource {x:Static SystemParameters.FocusVisualStyleKey}}" />
+        <Setter Property="ui:FocusVisualHelper.UseSystemFocusVisuals"
+                Value="{DynamicResource UseSystemFocusVisuals}" />
+        <Setter Property="ui:FocusVisualHelper.FocusVisualMargin"
+                Value="-3" />
+        <Setter Property="ui:ControlHelper.CornerRadius"
+                Value="{DynamicResource ControlCornerRadius}" />
+        <Setter Property="Stylus.IsPressAndHoldEnabled"
+                Value="False" />
+        <Setter Property="Template">
+            <Setter.Value>
+                <ControlTemplate TargetType="{x:Type Button}">
+                    <Border x:Name="Background"
+                            Background="{TemplateBinding Background}"
+                            CornerRadius="{TemplateBinding ui:ControlHelper.CornerRadius}"
+                            SnapsToDevicePixels="True">
+                        <Border x:Name="Border"
+                                BorderBrush="{TemplateBinding BorderBrush}"
+                                BorderThickness="{TemplateBinding BorderThickness}"
+                                CornerRadius="{TemplateBinding ui:ControlHelper.CornerRadius}"
+                                Padding="{TemplateBinding Padding}">
+                            <DockPanel LastChildFill="True">
+                                <Canvas Width="24"
+                                        Height="24"
+                                        Margin="0,0,10,0">
+                                    <Canvas.RenderTransform>
+                                        <TranslateTransform X="0"
+                                                            Y="0" />
+                                    </Canvas.RenderTransform>
+                                    <Canvas.Resources />
+                                    <Path Name="Edge"
+                                          StrokeThickness="2"
+                                          Stroke="{DynamicResource Teal}">
+                                        <Path.Data>
+                                            <PathGeometry Figures="M4.00924 6.79808C7.00595 6.05172 9.76022 4.53938 12 2.40665C14.2398 4.53938 16.9941 6.05172 19.9908 6.79808C19.8645 12.2046 18.4619 15.9974 16.7988 18.4366C15.0154 21.0523 13.0308 22 12 22C10.9692 22 8.98462 21.0523 7.20123 18.4366C5.53808 15.9974 4.13545 12.2046 4.00924 6.79808Z"
+                                                          FillRule="NonZero" />
+                                        </Path.Data>
+                                    </Path>
+                                    <Path Name="Filling"
+                                          Fill="{DynamicResource Teal}">
+                                        <Path.Data>
+                                            <PathGeometry Figures="M6 8C6.5 15 9.33333 19.3098 12 20L12 5C10.2291 6.19537 8.3165 7.16606 6.3062 7.88977L6 8Z"
+                                                          FillRule="NonZero" />
+                                        </Path.Data>
+                                    </Path>
+                                </Canvas>
+                                <ContentPresenter x:Name="ContentPresenter"
+                                                  ContentTemplate="{TemplateBinding ContentTemplate}"
+                                                  Content="{TemplateBinding Content}"
+                                                  ContentStringFormat="{TemplateBinding ContentStringFormat}"
+                                                  Focusable="False"
+                                                  HorizontalAlignment="{TemplateBinding HorizontalContentAlignment}"
+                                                  RecognizesAccessKey="True"
+                                                  SnapsToDevicePixels="{TemplateBinding SnapsToDevicePixels}"
+                                                  VerticalAlignment="{TemplateBinding VerticalContentAlignment}" />
+                            </DockPanel>
+                        </Border>
+                    </Border>
+                    <ControlTemplate.Triggers>
+                        <Trigger Property="IsMouseOver"
+                                 Value="True">
+                            <Setter Property="Background"
+                                    TargetName="Background"
+                                    Value="{DynamicResource Teal}" />
+                            <Setter Property="BorderBrush"
+                                    TargetName="Border"
+                                    Value="{DynamicResource Teal}" />
+                            <Setter Property="Foreground"
+                                    Value="{DynamicResource MyWhite}" />
+                            <Setter TargetName="Edge"
+                                    Property="Stroke"
+                                    Value="{DynamicResource DarkBlue}" />
+                            <Setter TargetName="Filling"
+                                    Property="Fill"
+                                    Value="{DynamicResource DarkBlue}" />
+                        </Trigger>
+                        <Trigger Property="IsPressed"
+                                 Value="True">
+                            <Setter Property="Background"
+                                    TargetName="Background"
+                                    Value="{DynamicResource DarkerTeal}" />
+                            <Setter TargetName="Edge"
+                                    Property="Stroke"
+                                    Value="{DynamicResource DarkBlue}" />
+                            <Setter TargetName="Filling"
+                                    Property="Fill"
+                                    Value="{DynamicResource DarkBlue}" />
+                        </Trigger>
+                        <Trigger Property="IsEnabled"
+                                 Value="False">
+                            <Setter Property="Background"
+                                    TargetName="Background"
+                                    Value="{DynamicResource MyWhiteSmoke}" />
+                            <Setter Property="BorderBrush"
+                                    TargetName="Border"
+                                    Value="{DynamicResource Transparent}" />
+                            <Setter Property="Foreground"
+                                    Value="{DynamicResource DarkBlue}" />
+                            <Setter TargetName="Edge"
+                                    Property="Stroke"
+                                    Value="{DynamicResource DarkBlue}" />
+                            <Setter TargetName="Filling"
+                                    Property="Fill"
+                                    Value="{DynamicResource DarkBlue}" />
+                        </Trigger>
+                    </ControlTemplate.Triggers>
+                </ControlTemplate>
+            </Setter.Value>
+        </Setter>
+    </Style>
+
+    <!-- Used in account administration -->
+    <Style x:Key="ButtonWithPlusIcon"
+           TargetType="{x:Type Button}"
+           BasedOn="{StaticResource ButtonBase}">
+        <Setter Property="OverridesDefaultStyle"
+                Value="True" />
+        <Setter Property="Background"
+                Value="{DynamicResource DarkBlue}" />
+        <Setter Property="Foreground"
+                Value="{DynamicResource MyWhite}" />
+        <Setter Property="FocusVisualStyle"
+                Value="{DynamicResource {x:Static SystemParameters.FocusVisualStyleKey}}" />
+        <Setter Property="ui:FocusVisualHelper.UseSystemFocusVisuals"
+                Value="{DynamicResource UseSystemFocusVisuals}" />
+        <Setter Property="ui:FocusVisualHelper.FocusVisualMargin"
+                Value="-3" />
+        <Setter Property="ui:ControlHelper.CornerRadius"
+                Value="{DynamicResource ControlCornerRadius}" />
+        <Setter Property="Stylus.IsPressAndHoldEnabled"
+                Value="False" />
+        <Setter Property="Template">
+            <Setter.Value>
+                <ControlTemplate TargetType="{x:Type Button}">
+                    <Border x:Name="Background"
+                            Background="{TemplateBinding Background}"
+                            CornerRadius="{TemplateBinding ui:ControlHelper.CornerRadius}"
+                            SnapsToDevicePixels="True">
+                        <Border x:Name="Border"
+                                BorderBrush="{TemplateBinding BorderBrush}"
+                                BorderThickness="{TemplateBinding BorderThickness}"
+                                CornerRadius="{TemplateBinding ui:ControlHelper.CornerRadius}"
+                                Padding="{TemplateBinding Padding}">
+                            <DockPanel LastChildFill="True">
+                                <Canvas Width="24"
+                                        Height="24"
+                                        Margin="0,0,10,0">
+                                    <Canvas.RenderTransform>
+                                        <TranslateTransform X="0"
+                                                            Y="0" />
+                                    </Canvas.RenderTransform>
+                                    <Canvas.Resources />
+                                    <Path Name="Plus"
+                                          Fill="#FF3FCFC7"
+                                          StrokeThickness="2">
+                                        <Path.Data>
+                                            <PathGeometry Figures="M13 2H11V11H2V13H11V22H13V13H22V11H13V2Z"
+                                                          FillRule="EvenOdd" />
+                                        </Path.Data>
+                                    </Path>
+                                </Canvas>
+                                <ContentPresenter x:Name="ContentPresenter"
+                                                  ContentTemplate="{TemplateBinding ContentTemplate}"
+                                                  Content="{TemplateBinding Content}"
+                                                  ContentStringFormat="{TemplateBinding ContentStringFormat}"
+                                                  Focusable="False"
+                                                  HorizontalAlignment="{TemplateBinding HorizontalContentAlignment}"
+                                                  RecognizesAccessKey="True"
+                                                  SnapsToDevicePixels="{TemplateBinding SnapsToDevicePixels}"
+                                                  VerticalAlignment="{TemplateBinding VerticalContentAlignment}" />
+                            </DockPanel>
+                        </Border>
+                    </Border>
+                    <ControlTemplate.Triggers>
+                        <Trigger Property="IsMouseOver"
+                                 Value="True">
+                            <Setter Property="Background"
+                                    TargetName="Background"
+                                    Value="{DynamicResource Teal}" />
+                            <Setter Property="BorderBrush"
+                                    TargetName="Border"
+                                    Value="{DynamicResource Teal}" />
+                            <Setter Property="Foreground"
+                                    Value="{DynamicResource MyWhite}" />
+                            <Setter TargetName="Plus"
+                                    Property="Fill"
+                                    Value="{DynamicResource DarkBlue}" />
+                        </Trigger>
+                        <Trigger Property="IsPressed"
+                                 Value="True">
+                            <Setter Property="Background"
+                                    TargetName="Background"
+                                    Value="{DynamicResource DarkerTeal}" />
+                            <Setter TargetName="Plus"
+                                    Property="Fill"
+                                    Value="{DynamicResource DarkBlue}" />
+                        </Trigger>
+                        <Trigger Property="IsEnabled"
+                                 Value="False">
+                            <Setter Property="Background"
+                                    TargetName="Background"
+                                    Value="{DynamicResource MyWhiteSmoke}" />
+                            <Setter Property="BorderBrush"
+                                    TargetName="Border"
+                                    Value="{DynamicResource Transparent}" />
+                            <Setter Property="Foreground"
+                                    Value="{DynamicResource DarkBlue}" />
+                            <Setter TargetName="Plus"
+                                    Property="Fill"
+                                    Value="{DynamicResource DarkBlue}" />
+                        </Trigger>
+                    </ControlTemplate.Triggers>
+                </ControlTemplate>
+            </Setter.Value>
+        </Setter>
+    </Style>
+
+    <!-- Used in seal parameters settings -->
+    <Style x:Key="ButtonWithCorrectIcon"
+           TargetType="{x:Type Button}"
+           BasedOn="{StaticResource ButtonBase}">
+        <Setter Property="OverridesDefaultStyle"
+                Value="True" />
+        <Setter Property="Background"
+                Value="{DynamicResource DarkBlue}" />
+        <Setter Property="Foreground"
+                Value="{DynamicResource MyWhite}" />
+        <Setter Property="FocusVisualStyle"
+                Value="{DynamicResource {x:Static SystemParameters.FocusVisualStyleKey}}" />
+        <Setter Property="ui:FocusVisualHelper.UseSystemFocusVisuals"
+                Value="{DynamicResource UseSystemFocusVisuals}" />
+        <Setter Property="ui:FocusVisualHelper.FocusVisualMargin"
+                Value="-3" />
+        <Setter Property="ui:ControlHelper.CornerRadius"
+                Value="{DynamicResource ControlCornerRadius}" />
+        <Setter Property="Stylus.IsPressAndHoldEnabled"
+                Value="False" />
+        <Setter Property="Template">
+            <Setter.Value>
+                <ControlTemplate TargetType="{x:Type Button}">
+                    <Border x:Name="Background"
+                            Background="{TemplateBinding Background}"
+                            CornerRadius="{TemplateBinding ui:ControlHelper.CornerRadius}"
+                            SnapsToDevicePixels="True">
+                        <Border x:Name="Border"
+                                BorderBrush="{TemplateBinding BorderBrush}"
+                                BorderThickness="{TemplateBinding BorderThickness}"
+                                CornerRadius="{TemplateBinding ui:ControlHelper.CornerRadius}"
+                                Padding="{TemplateBinding Padding}">
+                            <DockPanel LastChildFill="True">
+                                <Canvas Width="24"
+                                        Height="24"
+                                        Margin="0,0,10,0">
+                                    <Canvas.RenderTransform>
+                                        <TranslateTransform X="0"
+                                                            Y="0" />
+                                    </Canvas.RenderTransform>
+                                    <Canvas.Resources />
+                                    <Path Name="Correct"
+                                          StrokeThickness="2"
+                                          Stroke="{DynamicResource Teal}">
+                                        <Path.Data>
+                                            <PathGeometry Figures="M1 12L8 19L22 5"
+                                                          FillRule="NonZero" />
+                                        </Path.Data>
+                                    </Path>
+                                </Canvas>
+                                <ContentPresenter x:Name="ContentPresenter"
+                                                  ContentTemplate="{TemplateBinding ContentTemplate}"
+                                                  Content="{TemplateBinding Content}"
+                                                  ContentStringFormat="{TemplateBinding ContentStringFormat}"
+                                                  Focusable="False"
+                                                  HorizontalAlignment="{TemplateBinding HorizontalContentAlignment}"
+                                                  RecognizesAccessKey="True"
+                                                  SnapsToDevicePixels="{TemplateBinding SnapsToDevicePixels}"
+                                                  VerticalAlignment="{TemplateBinding VerticalContentAlignment}" />
+                            </DockPanel>
+                        </Border>
+                    </Border>
+                    <ControlTemplate.Triggers>
+                        <Trigger Property="IsMouseOver"
+                                 Value="True">
+                            <Setter Property="Background"
+                                    TargetName="Background"
+                                    Value="{DynamicResource Teal}" />
+                            <Setter Property="BorderBrush"
+                                    TargetName="Border"
+                                    Value="{DynamicResource Teal}" />
+                            <Setter Property="Foreground"
+                                    Value="{DynamicResource MyWhite}" />
+                            <Setter TargetName="Correct"
+                                    Property="Stroke"
+                                    Value="{DynamicResource DarkBlue}" />
+                        </Trigger>
+                        <Trigger Property="IsPressed"
+                                 Value="True">
+                            <Setter Property="Background"
+                                    TargetName="Background"
+                                    Value="{DynamicResource DarkerTeal}" />
+                            <Setter TargetName="Correct"
+                                    Property="Stroke"
+                                    Value="{DynamicResource DarkBlue}" />
+                        </Trigger>
+                        <Trigger Property="IsEnabled"
+                                 Value="False">
+                            <Setter Property="Background"
+                                    TargetName="Background"
+                                    Value="{DynamicResource MyWhiteSmoke}" />
+                            <Setter Property="BorderBrush"
+                                    TargetName="Border"
+                                    Value="{DynamicResource Transparent}" />
+                            <Setter Property="Foreground"
+                                    Value="{DynamicResource DarkBlue}" />
+                            <Setter TargetName="Correct"
+                                    Property="Stroke"
+                                    Value="{DynamicResource DarkBlue}" />
+                        </Trigger>
+                    </ControlTemplate.Triggers>
+                </ControlTemplate>
+            </Setter.Value>
+        </Setter>
+    </Style>
+
+    <Style TargetType="Button"
+           BasedOn="{StaticResource ButtonBase}"
+           x:Key="ButtonWithBackArrow">
+        <Setter Property="Height"
+                Value="24" />
+        <Setter Property="Width"
+                Value="24" />
+        <Setter Property="Template">
+            <Setter.Value>
+                <ControlTemplate TargetType="{x:Type Button}">
+                    <Border Width="{TemplateBinding Width}"
+                            Height="{TemplateBinding Height}"
+                            BorderBrush="{StaticResource Transparent}"
+                            Background="{StaticResource Transparent}">
+                        <Viewbox Stretch="Uniform">
+                            <Canvas Name="svg26"
+                                    Width="24"
+                                    Height="24">
+                                <Canvas.RenderTransform>
+                                    <TranslateTransform X="0"
+                                                        Y="0" />
+                                </Canvas.RenderTransform>
+                                <Canvas.Resources />
+                                <Ellipse Canvas.Left="2"
+                                         Canvas.Top="2"
+                                         Width="20"
+                                         Height="20"
+                                         Name="Circle"
+                                         StrokeThickness="2"
+                                         Stroke="{DynamicResource DarkBlue}" />
+                                <Path Name="Arrow"
+                                      StrokeThickness="2"
+                                      Stroke="{DynamicResource DarkBlue}">
+                                    <Path.Data>
+                                        <PathGeometry Figures="M18 12L7 12M7 12L12 17M7 12L12 7.5"
+                                                      FillRule="NonZero" />
+                                    </Path.Data>
+                                </Path>
+                            </Canvas>
+                        </Viewbox>
+                    </Border>
+                    <ControlTemplate.Triggers>
+                        <Trigger Property="IsMouseOver"
+                                 Value="True">
+                            <Setter TargetName="Circle"
+                                    Property="Stroke"
+                                    Value="{DynamicResource Teal}" />
+                            <Setter TargetName="Arrow"
+                                    Property="Stroke"
+                                    Value="{DynamicResource Teal}" />
+                        </Trigger>
+                        <Trigger Property="IsPressed"
+                                 Value="True">
+                            <Setter TargetName="Circle"
+                                    Property="Stroke"
+                                    Value="{DynamicResource DarkerTeal}" />
+                            <Setter TargetName="Arrow"
+                                    Property="Stroke"
+                                    Value="{DynamicResource DarkerTeal}" />
+                        </Trigger>
+                    </ControlTemplate.Triggers>
+                </ControlTemplate>
+            </Setter.Value>
+        </Setter>
+    </Style>
+
+    <Style TargetType="Button"
+           BasedOn="{StaticResource ButtonBase}"
+           x:Key="ButtonWithDeleteIcon">
+        <Setter Property="Height"
+                Value="24" />
+        <Setter Property="Width"
+                Value="24" />
+        <Setter Property="Foreground"
+                Value="{DynamicResource Lavender}" />
+        <Setter Property="Template">
+            <Setter.Value>
+                <ControlTemplate TargetType="{x:Type Button}">
+                    <Border Background="{StaticResource Transparent}"
+                            BorderBrush="{StaticResource Transparent}"
+                            BorderThickness="1">
+                        <Viewbox xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+                                 Stretch="Uniform">
+                            <Canvas Name="svg3898"
+                                    Width="24"
+                                    Height="24">
+                                <Canvas.RenderTransform>
+                                    <TranslateTransform X="0"
+                                                        Y="0" />
+                                </Canvas.RenderTransform>
+                                <Canvas.Resources />
+                                <Rectangle Canvas.Left="2.00024"
+                                           Canvas.Top="3.81836"
+                                           Width="2.57119"
+                                           Height="25.7119"
+                                           Name="rect1"
+                                           Fill="{TemplateBinding Foreground}">
+                                    <Rectangle.RenderTransform>
+                                        <RotateTransform Angle="-45" />
+                                    </Rectangle.RenderTransform>
+                                </Rectangle>
+                                <Rectangle Canvas.Left="3.81885"
+                                           Canvas.Top="21.9995"
+                                           Width="2.57119"
+                                           Height="25.7119"
+                                           Name="rect2"
+                                           Fill="{TemplateBinding Foreground}">
+                                    <Rectangle.RenderTransform>
+                                        <RotateTransform Angle="-135" />
+                                    </Rectangle.RenderTransform>
+                                </Rectangle>
+                            </Canvas>
+                        </Viewbox>
+                    </Border>
+                    <ControlTemplate.Triggers>
+                        <Trigger Property="IsMouseOver"
+                                 Value="True">
+                            <Setter TargetName="rect1"
+                                    Property="Fill"
+                                    Value="{DynamicResource Teal}" />
+                            <Setter TargetName="rect2"
+                                    Property="Fill"
+                                    Value="{DynamicResource Teal}" />
+                        </Trigger>
+                        <Trigger Property="IsPressed"
+                                 Value="True">
+                            <Setter TargetName="rect1"
+                                    Property="Fill"
+                                    Value="{DynamicResource DarkerTeal}" />
+                            <Setter TargetName="rect2"
+                                    Property="Fill"
+                                    Value="{DynamicResource DarkerTeal}" />
+                        </Trigger>
+                    </ControlTemplate.Triggers>
+                </ControlTemplate>
+            </Setter.Value>
+        </Setter>
+    </Style>
+
+    <Style TargetType="Button"
+           x:Key="PdfPreviewBtnArrowLeft"
+           BasedOn="{StaticResource ButtonBase}">
+        <Setter Property="Width"
+                Value="24" />
+        <Setter Property="Height"
+                Value="24" />
+        <Setter Property="Padding"
+                Value="0" />
+        <Setter Property="Margin"
+                Value="0" />
+        <Setter Property="ui:FocusVisualHelper.UseSystemFocusVisuals"
+                Value="True" />
+        <Setter Property="ui:FocusVisualHelper.FocusVisualMargin"
+                Value="-3" />
+        <Setter Property="ui:FocusVisualHelper.FocusVisualPrimaryBrush"
+                Value="{StaticResource Teal}" />
+        <Setter Property="ui:FocusVisualHelper.FocusVisualSecondaryBrush"
+                Value="{StaticResource Teal}" />
+        <Setter Property="ui:FocusVisualHelper.FocusVisualPrimaryThickness"
+                Value="1" />
+        <Setter Property="ui:FocusVisualHelper.FocusVisualSecondaryThickness"
+                Value="1" />
+        <Setter Property="Template">
+            <Setter.Value>
+                <ControlTemplate TargetType="{x:Type Button}">
+                    <Border BorderBrush="{StaticResource GhostWhite}"
+                            Background="{StaticResource GhostWhite}"
+                            BorderThickness="1">
+                        <Viewbox Stretch="Uniform">
+                            <Canvas Name="svg831"
+                                    Width="24"
+                                    Height="24">
+                                <Canvas.RenderTransform>
+                                    <TranslateTransform X="0"
+                                                        Y="0" />
+                                </Canvas.RenderTransform>
+                                <Canvas.Resources />
+                                <Path Name="LeftArrow"
+                                      StrokeThickness="2"
+                                      Stroke="{DynamicResource DarkBlue}">
+                                    <Path.Data>
+                                        <PathGeometry Figures="M15.3333 6L9.33325 12L15.3333 18"
+                                                      FillRule="NonZero" />
+                                    </Path.Data>
+                                </Path>
+                            </Canvas>
+                        </Viewbox>
+                    </Border>
+                    <ControlTemplate.Triggers>
+                        <Trigger Property="IsMouseOver"
+                                 Value="True">
+                            <Setter TargetName="LeftArrow"
+                                    Property="Stroke"
+                                    Value="{DynamicResource Teal}" />
+                        </Trigger>
+                        <Trigger Property="IsPressed"
+                                 Value="True">
+                            <Setter TargetName="LeftArrow"
+                                    Property="Stroke"
+                                    Value="{DynamicResource DarkerTeal}" />
+                        </Trigger>
+                    </ControlTemplate.Triggers>
+                </ControlTemplate>
+            </Setter.Value>
+        </Setter>
+    </Style>
+
+    <Style TargetType="Button"
+           x:Key="PdfPreviewBtnArrowRight"
+           BasedOn="{StaticResource ButtonBase}">
+        <Setter Property="Width"
+                Value="24" />
+        <Setter Property="Height"
+                Value="24" />
+        <Setter Property="Padding"
+                Value="0" />
+        <Setter Property="Margin"
+                Value="0" />
+        <Setter Property="ui:FocusVisualHelper.UseSystemFocusVisuals"
+                Value="True" />
+        <Setter Property="ui:FocusVisualHelper.FocusVisualMargin"
+                Value="-3" />
+        <Setter Property="ui:FocusVisualHelper.FocusVisualPrimaryBrush"
+                Value="{StaticResource Teal}" />
+        <Setter Property="ui:FocusVisualHelper.FocusVisualSecondaryBrush"
+                Value="{StaticResource Teal}" />
+        <Setter Property="ui:FocusVisualHelper.FocusVisualPrimaryThickness"
+                Value="1" />
+        <Setter Property="ui:FocusVisualHelper.FocusVisualSecondaryThickness"
+                Value="1" />
+        <Setter Property="Template">
+            <Setter.Value>
+                <ControlTemplate TargetType="{x:Type Button}">
+                    <Border BorderBrush="{StaticResource GhostWhite}"
+                            Background="{StaticResource GhostWhite}"
+                            BorderThickness="1">
+                        <Viewbox Stretch="Uniform">
+                            <Canvas Name="svg855"
+                                    Width="24"
+                                    Height="24">
+                                <Canvas.RenderTransform>
+                                    <TranslateTransform X="0"
+                                                        Y="0" />
+                                </Canvas.RenderTransform>
+                                <Path Name="RightArrow"
+                                      StrokeThickness="2"
+                                      Stroke="{DynamicResource DarkBlue}">
+                                    <Path.Data>
+                                        <PathGeometry Figures="M9.33325 6L15.3333 12L9.33325 18"
+                                                      FillRule="NonZero" />
+                                    </Path.Data>
+                                </Path>
+                            </Canvas>
+                        </Viewbox>
+                    </Border>
+                    <ControlTemplate.Triggers>
+                        <Trigger Property="IsMouseOver"
+                                 Value="True">
+                            <Setter TargetName="RightArrow"
+                                    Property="Stroke"
+                                    Value="{DynamicResource Teal}" />
+                        </Trigger>
+                        <Trigger Property="IsPressed"
+                                 Value="True">
+                            <Setter TargetName="RightArrow"
+                                    Property="Stroke"
+                                    Value="{DynamicResource DarkerTeal}" />
+                        </Trigger>
+                    </ControlTemplate.Triggers>
+                </ControlTemplate>
+            </Setter.Value>
+        </Setter>
+    </Style>
+
+    <Style TargetType="Button"
+           x:Key="PDfPreviewBtnSavePos"
+           BasedOn="{StaticResource ButtonBase}">
+        <Setter Property="Height"
+                Value="32" />
+        <Setter Property="ui:FocusVisualHelper.UseSystemFocusVisuals"
+                Value="True" />
+        <Setter Property="Padding"
+                Value="0" />
+        <Setter Property="Margin"
+                Value="10,0" />
+        <Setter Property="ui:FocusVisualHelper.FocusVisualMargin"
+                Value="-3" />
+        <Setter Property="ui:FocusVisualHelper.FocusVisualPrimaryBrush"
+                Value="{StaticResource Teal}" />
+        <Setter Property="ui:FocusVisualHelper.FocusVisualSecondaryBrush"
+                Value="{StaticResource Teal}" />
+        <Setter Property="ui:FocusVisualHelper.FocusVisualPrimaryThickness"
+                Value="1" />
+        <Setter Property="ui:FocusVisualHelper.FocusVisualSecondaryThickness"
+                Value="1" />
+        <Setter Property="Template">
+            <Setter.Value>
+                <ControlTemplate TargetType="{x:Type Button}">
+                    <Border BorderBrush="{DynamicResource LightSteelBlue}"
+                            CornerRadius="3"
+                            Background="{DynamicResource GhostWhite}"
+                            BorderThickness="1"
+                            VerticalAlignment="Center"
+                            Height="{TemplateBinding Height}"
+                            Width="{TemplateBinding Width}"
+                            Padding="10,3"
+                            Name="Border">
+                        <DockPanel>
+                            <Viewbox Stretch="Uniform"
+                                     Width="24"
+                                     Height="24"
+                                     VerticalAlignment="Center">
+                                <Canvas Name="svg1985"
+                                        Width="24"
+                                        Height="24">
+                                    <Canvas.RenderTransform>
+                                        <TranslateTransform X="0"
+                                                            Y="0" />
+                                    </Canvas.RenderTransform>
+                                    <Canvas.Resources />
+                                    <Path Name="SavePart1"
+                                          Fill="{DynamicResource DarkBlue}">
+                                        <Path.Data>
+                                            <PathGeometry Figures="M21 21C21 21.5523 20.5523 22 20 22H4C3.44772 22 3 21.5523 3 21V3C3 2.44772 3.44772 2 4 2H18L21 5V21ZM5 3H16V9H5V3ZM12 18C13.6569 18 15 16.6569 15 15C15 13.3431 13.6569 12 12 12C10.3431 12 9 13.3431 9 15C9 16.6569 10.3431 18 12 18Z"
+                                                          FillRule="EvenOdd" />
+                                        </Path.Data>
+                                    </Path>
+                                    <Rectangle Canvas.Left="6"
+                                               Canvas.Top="4"
+                                               Width="4"
+                                               Height="4"
+                                               Name="SavePart2"
+                                               Fill="{DynamicResource DarkBlue}" />
+                                </Canvas>
+                            </Viewbox>
+                            <TextBlock Name="BtnText"
+                                       Foreground="{DynamicResource DarkBlue}"
+                                       FontSize="14"
+                                       VerticalAlignment="Center"
+                                       Margin="5,0,0,0">
+                                <ContentPresenter Content="{TemplateBinding Content}" />
+                            </TextBlock>
+                        </DockPanel>
+                    </Border>
+                    <ControlTemplate.Triggers>
+                        <Trigger Property="IsMouseOver"
+                                 Value="True">
+                            <Setter TargetName="SavePart1"
+                                    Property="Fill"
+                                    Value="{DynamicResource Teal}" />
+                            <Setter TargetName="SavePart2"
+                                    Property="Fill"
+                                    Value="{DynamicResource Teal}" />
+                            <Setter TargetName="BtnText"
+                                    Property="Foreground"
+                                    Value="{DynamicResource Teal}" />
+                            <Setter TargetName="Border"
+                                    Property="BorderBrush"
+                                    Value="{DynamicResource Teal}" />
+                        </Trigger>
+                        <Trigger Property="IsPressed"
+                                 Value="True">
+                            <Setter TargetName="SavePart1"
+                                    Property="Fill"
+                                    Value="{DynamicResource DarkerTeal}" />
+                            <Setter TargetName="SavePart2"
+                                    Property="Fill"
+                                    Value="{DynamicResource DarkerTeal}" />
+                            <Setter TargetName="BtnText"
+                                    Property="Foreground"
+                                    Value="{DynamicResource DarkerTeal}" />
+                            <Setter TargetName="Border"
+                                    Property="BorderBrush"
+                                    Value="{DynamicResource DarkerTeal}" />
+                        </Trigger>
+                    </ControlTemplate.Triggers>
+                </ControlTemplate>
+            </Setter.Value>
+        </Setter>
+    </Style>
+
+    <Style TargetType="Button"
+           x:Key="PdfPreviewButton"
+           BasedOn="{StaticResource ButtonBase}">
+        <Setter Property="Height"
+                Value="32" />
+        <Setter Property="VerticalAlignment"
+                Value="Center" />
+        <Setter Property="Padding"
+                Value="0" />
+        <Setter Property="Margin"
+                Value="10,0" />
+        <Setter Property="ui:FocusVisualHelper.UseSystemFocusVisuals"
+                Value="True" />
+        <Setter Property="ui:FocusVisualHelper.FocusVisualMargin"
+                Value="-3" />
+        <Setter Property="ui:FocusVisualHelper.FocusVisualPrimaryBrush"
+                Value="{StaticResource Teal}" />
+        <Setter Property="ui:FocusVisualHelper.FocusVisualSecondaryBrush"
+                Value="{StaticResource Teal}" />
+        <Setter Property="ui:FocusVisualHelper.FocusVisualPrimaryThickness"
+                Value="1" />
+        <Setter Property="ui:FocusVisualHelper.FocusVisualSecondaryThickness"
+                Value="1" />
+        <Setter Property="Template">
+            <Setter.Value>
+                <ControlTemplate TargetType="{x:Type Button}">
+                    <Border Width="{TemplateBinding Width}"
+                            Height="{TemplateBinding Width}"
+                            Name="Border"
+                            CornerRadius="3"
+                            Background="{DynamicResource GhostWhite}"
+                            BorderBrush="{DynamicResource LightSteelBlue}"
+                            Padding="10,0"
+                            BorderThickness="1">
+                        <TextBlock Foreground="{DynamicResource DarkBlue}"
+                                   FontSize="14"
+                                   Margin="5,3"
+                                   Name="Text"
+                                   VerticalAlignment="Center"
+                                   HorizontalAlignment="Center">
+                            <ContentPresenter />
+                        </TextBlock>
+                    </Border>
+                    <ControlTemplate.Triggers>
+                        <Trigger Property="IsMouseOver"
+                                 Value="True">
+                            <Setter Property="Foreground"
+                                    TargetName="Text"
+                                    Value="{DynamicResource Teal}" />
+                            <Setter Property="BorderBrush"
+                                    TargetName="Border"
+                                    Value="{DynamicResource Teal}" />
+                        </Trigger>
+                        <Trigger Property="IsPressed"
+                                 Value="True">
+                            <Setter Property="Foreground"
+                                    TargetName="Text"
+                                    Value="{DynamicResource DarkerTeal}" />
+                            <Setter Property="BorderBrush"
+                                    TargetName="Border"
+                                    Value="{DynamicResource DarkerTeal}" />
+                        </Trigger>
+                    </ControlTemplate.Triggers>
+                </ControlTemplate>
+            </Setter.Value>
+        </Setter>
+    </Style>
+
+
+    <!-- TextBox -->
+
+    <!-- Classic textBox -->
+    <Style TargetType="{x:Type TextBox}"
+           BasedOn="{StaticResource DefaultTextBoxStyle}"
+           x:Key="TextBoxBase">
+        <Setter Property="BorderBrush"
+                Value="{StaticResource Transparent}" />
+        <Setter Property="Background"
+                Value="{StaticResource MyWhiteSmoke}" />
+        <Setter Property="Foreground"
+                Value="{StaticResource DarkBlue}" />
+        <Setter Property="ui:ControlHelper.PlaceholderForeground"
+                Value="{StaticResource DarkBlueWithOpacity}" />
+        <Setter Property="FontSize"
+                Value="16" />
+        <Setter Property="FontFamily"
+                Value="{StaticResource CentralFont}" />
+        <Setter Property="VerticalContentAlignment"
+                Value="Center" />
+        <Setter Property="Margin"
+                Value="5,2.5,5,20" />
+        <Setter Property="Height"
+                Value="52" />
+        <Setter Property="Template"
+                Value="{StaticResource TextBoxControlTemplate}" />
+        <Setter Property="ui:FocusVisualHelper.UseSystemFocusVisuals"
+                Value="True" />
+        <Setter Property="ui:FocusVisualHelper.FocusVisualMargin"
+                Value="-3" />
+        <Setter Property="ui:FocusVisualHelper.FocusVisualPrimaryBrush"
+                Value="{StaticResource Teal}" />
+        <Setter Property="ui:FocusVisualHelper.FocusVisualSecondaryBrush"
+                Value="{StaticResource Teal}" />
+        <Setter Property="ui:FocusVisualHelper.FocusVisualPrimaryThickness"
+                Value="1" />
+        <Setter Property="ui:FocusVisualHelper.FocusVisualSecondaryThickness"
+                Value="1" />
+    </Style>
+
+    <!-- Textbox, which has button with file choose button inside. To create this control, do this:
+        <Grid>
+            <TextBox ui:ControlHelper.PlaceholderText="Text box with browse button" Style="{StaticResource TextBoxWithBrowseButton}"/>
+            <Button Style="{StaticResource ButtonInsideTextBox}" HorizontalAlignment="Right"/>
+        </Grid>
+    -->
+    <Style TargetType="{x:Type TextBox}"
+           BasedOn="{StaticResource TextBoxBase}"
+           x:Key="TextBoxWithBrowseButton">
+        <Setter Property="ui:TextBoxHelper.IsDeleteButtonVisible"
+                Value="False" />
+        <Setter Property="Padding"
+                Value="10,0,50,0" />
+        <Style.Triggers>
+            <MultiTrigger>
+                <MultiTrigger.Conditions>
+                    <Condition Property="IsKeyboardFocused"
+                               Value="True" />
+                    <Condition Property="ui:TextBoxHelper.HasText"
+                               Value="True" />
+                    <Condition Property="IsReadOnly"
+                               Value="False" />
+                    <Condition Property="AcceptsReturn"
+                               Value="False" />
+                    <Condition Property="TextWrapping"
+                               Value="NoWrap" />
+                </MultiTrigger.Conditions>
+                <Setter Property="ui:TextBoxHelper.IsDeleteButtonVisible"
+                        Value="False" />
+            </MultiTrigger>
+        </Style.Triggers>
+    </Style>
+
+    <!-- ComboBox -->
+
+    <Style TargetType="ComboBox"
+           x:Key="ComboBoxBase">
+        <Setter Property="Margin"
+                Value="5,2.5,5,20" />
+        <Setter Property="BorderBrush"
+                Value="Transparent" />
+        <Setter Property="BorderThickness"
+                Value="1" />
+        <Setter Property="Background"
+                Value="{StaticResource MyWhiteSmoke}" />
+        <Setter Property="FontSize"
+                Value="16" />
+        <Setter Property="Padding"
+                Value="5,4" />
+        <Setter Property="Height"
+                Value="52" />
+        <Setter Property="Foreground"
+                Value="{StaticResource DarkBlue}" />
+        <Setter Property="MaxDropDownHeight"
+                Value="300" />
+        <Setter Property="ui:FocusVisualHelper.UseSystemFocusVisuals"
+                Value="False" />
+        <Setter Property="ui:FocusVisualHelper.FocusVisualMargin"
+                Value="-3" />
+        <Setter Property="ui:FocusVisualHelper.FocusVisualPrimaryBrush"
+                Value="{StaticResource Teal}" />
+        <Setter Property="ui:FocusVisualHelper.FocusVisualSecondaryBrush"
+                Value="{StaticResource Teal}" />
+        <Setter Property="ui:ControlHelper.PlaceholderForeground"
+                Value="{StaticResource DarkBlueWithOpacity}" />
+        <Setter Property="Template">
+            <Setter.Value>
+                <ControlTemplate TargetType="{x:Type ComboBox}">
+                    <Border Name="Border"
+                            Width="{TemplateBinding Width}"
+                            Height="{TemplateBinding Height}"
+                            BorderThickness="1"
+                            BorderBrush="{DynamicResource Transparent}"
+                            CornerRadius="3">
+                        <Grid>
+                            <ToggleButton Name="ToggleButton"
+                                          Template="{StaticResource ComboBoxToggleButton}"
+                                          Focusable="False"
+                                          Width="{TemplateBinding Width}"
+                                          HorizontalAlignment="Stretch"
+                                          Height="{TemplateBinding Height}"
+                                          ClickMode="Press"
+                                          IsChecked="{Binding Path=IsDropDownOpen, Mode=TwoWay, RelativeSource={RelativeSource TemplatedParent}}" />
+                            <ContentPresenter Name="ContentSite"
+                                              IsHitTestVisible="False"
+                                              Content="{TemplateBinding SelectionBoxItem}"
+                                              ContentTemplate="{TemplateBinding SelectionBoxItemTemplate}"
+                                              HorizontalAlignment="Stretch"
+                                              VerticalAlignment="Center"
+                                              Margin="10,0,35,0"
+                                              ContentStringFormat="{TemplateBinding SelectionBoxItemStringFormat}"
+                                              ContentTemplateSelector="{TemplateBinding ItemTemplateSelector}"
+                                              Focusable="False" />
+                            <Popup Name="Popup"
+                                   Placement="Bottom"
+                                   IsOpen="{TemplateBinding IsDropDownOpen}"
+                                   AllowsTransparency="True"
+                                   Focusable="False"
+                                   PopupAnimation="Slide"
+                                   Visibility="Collapsed">
+                                <Grid Name="DropDown"
+                                      SnapsToDevicePixels="True"
+                                      MinWidth="{TemplateBinding FrameworkElement.ActualWidth}"
+                                      MaxHeight="{TemplateBinding ComboBox.MaxDropDownHeight}"
+                                      HorizontalAlignment="Stretch">
+                                    <Border x:Name="DropDownBorder"
+                                            Background="{StaticResource MyWhiteSmoke}"
+                                            BorderThickness="0"
+                                            BorderBrush="Transparent"
+                                            CornerRadius="3"
+                                            HorizontalAlignment="Stretch">
+                                        <ScrollViewer VerticalScrollBarVisibility="Auto"
+                                                      SnapsToDevicePixels="True">
+                                            <ItemsPresenter KeyboardNavigation.DirectionalNavigation="Contained"
+                                                            HorizontalAlignment="Stretch" />
+                                        </ScrollViewer>
+                                    </Border>
+                                </Grid>
+                            </Popup>
+                            <TextBlock x:Name="PlaceholderTextContentPresenter"
+                                       Foreground="{DynamicResource DarkBlueWithOpacity}"
+                                       IsHitTestVisible="False"
+                                       VerticalAlignment="Center"
+                                       Margin="{TemplateBinding BorderThickness}"
+                                       Padding="{TemplateBinding Padding}"
+                                       TextAlignment="Left"
+                                       Visibility="Collapsed"
+                                       Focusable="False"
+                                       Text="{TemplateBinding ui:ControlHelper.PlaceholderText}" />
+                        </Grid>
+                    </Border>
+                    <ControlTemplate.Triggers>
+                        <Trigger Property="IsMouseOver"
+                                 Value="True">
+                            <Setter TargetName="Border"
+                                    Property="BorderBrush"
+                                    Value="{StaticResource Teal}" />
+                        </Trigger>
+                        <Trigger Property="IsEnabled"
+                                 Value="False">
+                            <Setter TargetName="PlaceholderTextContentPresenter"
+                                    Property="Foreground"
+                                    Value="{StaticResource DimGray}" />
+                        </Trigger>
+                        <Trigger Property="SelectedIndex"
+                                 Value="-1">
+                            <Setter TargetName="PlaceholderTextContentPresenter"
+                                    Property="Visibility"
+                                    Value="Visible" />
+                        </Trigger>
+                        <Trigger Property="Validation.HasError"
+                                 Value="True">
+                            <Setter TargetName="ToggleButton"
+                                    Property="BorderBrush"
+                                    Value="{DynamicResource ErrorRed}" />
+                            <Setter Property="Margin"
+                                    Value="5,2.5,5,40" />
+                        </Trigger>
+                        <Trigger Property="IsKeyboardFocused"
+                                 Value="True">
+                            <Setter TargetName="Border"
+                                    Property="BorderBrush"
+                                    Value="{DynamicResource Teal}" />
+                            <Setter TargetName="Border"
+                                    Property="BorderThickness"
+                                    Value="2" />
+                        </Trigger>
+                    </ControlTemplate.Triggers>
+                </ControlTemplate>
+            </Setter.Value>
+        </Setter>
+    </Style>
+
+    <Style TargetType="{x:Type ComboBoxItem}">
+        <Setter Property="Foreground"
+                Value="{StaticResource DimGray}" />
+        <Setter Property="Background"
+                Value="{StaticResource MyWhiteSmoke}" />
+        <Setter Property="FrameworkElement.OverridesDefaultStyle"
+                Value="True" />
+        <Setter Property="SnapsToDevicePixels"
+                Value="True" />
+        <Setter Property="Margin"
+                Value="5,2.5" />
+        <Setter Property="Template">
+            <Setter.Value>
+                <ControlTemplate TargetType="{x:Type ComboBoxItem}">
+                    <TextBlock Name="tb"
+                               Background="Transparent"
+                               Margin="{TemplateBinding Margin}"
+                               FontSize="{TemplateBinding FontSize}"
+                               Foreground="{TemplateBinding Foreground}">
+                                <ContentPresenter Name="Content" />
+                    </TextBlock>
+                    <ControlTemplate.Triggers>
+                        <Trigger Property="IsMouseOver"
+                                 Value="True">
+                            <Setter TargetName="tb"
+                                    Property="Foreground"
+                                    Value="{StaticResource DarkBlue}" />
+                        </Trigger>
+                        <Trigger Property="IsSelected"
+                                 Value="True">
+                            <Setter TargetName="tb"
+                                    Property="Foreground"
+                                    Value="{StaticResource DarkBlue}" />
+                            <Setter TargetName="tb"
+                                    Property="FontWeight"
+                                    Value="600" />
+                        </Trigger>
+                    </ControlTemplate.Triggers>
+                </ControlTemplate>
+            </Setter.Value>
+        </Setter>
+    </Style>
+
+    <!-- CheckBox -->
+
+    <Style TargetType="CheckBox"
+           BasedOn="{StaticResource DefaultCheckBoxStyle}"
+           x:Key="CheckBoxBase">
+        <Setter Property="Height"
+                Value="28" />
+        <Setter Property="FontSize"
+                Value="14" />
+        <Setter Property="VerticalContentAlignment"
+                Value="Center" />
+        <Setter Property="VerticalAlignment"
+                Value="Center" />
+        <Setter Property="Template"
+                Value="{StaticResource CheckBoxControlTemplate1}" />
+        <Setter Property="Margin"
+                Value="5,2.5,5,20" />
+        <Setter Property="ui:FocusVisualHelper.UseSystemFocusVisuals"
+                Value="True" />
+        <Setter Property="ui:FocusVisualHelper.FocusVisualMargin"
+                Value="-2" />
+        <Setter Property="ui:FocusVisualHelper.FocusVisualPrimaryBrush"
+                Value="{StaticResource Teal}" />
+        <Setter Property="ui:FocusVisualHelper.FocusVisualSecondaryBrush"
+                Value="{StaticResource Teal}" />
+        <Setter Property="ui:FocusVisualHelper.FocusVisualPrimaryThickness"
+                Value="1" />
+        <Setter Property="ui:FocusVisualHelper.FocusVisualSecondaryThickness"
+                Value="1" />
+    </Style>
+
+    <Style TargetType="CheckBox"
+           BasedOn="{StaticResource CheckBoxBase}"
+           x:Key="CheckBoxInsideComboBox">
+        <Setter Property="Margin"
+                Value="0" />
+        <Setter Property="Padding"
+                Value="10,2.5" />
+        <Setter Property="Template"
+                Value="{StaticResource CheckBoxInsideComboBoxControlTemplate}" />
+        <Setter Property="HorizontalAlignment"
+                Value="Stretch" />
+        <Setter Property="ui:FocusVisualHelper.UseSystemFocusVisuals"
+                Value="True" />
+        <Setter Property="ui:FocusVisualHelper.FocusVisualMargin"
+                Value="-3" />
+        <Setter Property="ui:FocusVisualHelper.FocusVisualPrimaryBrush"
+                Value="{StaticResource Teal}" />
+        <Setter Property="ui:FocusVisualHelper.FocusVisualSecondaryBrush"
+                Value="{StaticResource Teal}" />
+        <Setter Property="ui:FocusVisualHelper.FocusVisualPrimaryThickness"
+                Value="1" />
+        <Setter Property="ui:FocusVisualHelper.FocusVisualSecondaryThickness"
+                Value="1" />
+    </Style>
+
+    <!-- HyperlinkButton -->
+
+    <TextDecorationCollection x:Key="UnderlineDecoration">
+        <TextDecoration Location="Underline" />
+    </TextDecorationCollection>
+
+    <Style TargetType="ui:HyperlinkButton"
+           x:Key="HyperlinkButtonBase">
+        <Setter Property="Foreground"
+                Value="{DynamicResource DarkBlue}" />
+        <Setter Property="Margin"
+                Value="5,3" />
+        <Setter Property="Padding"
+                Value="0" />
+        <Setter Property="FontSize"
+                Value="14" />
+        <Setter Property="ui:FocusVisualHelper.UseSystemFocusVisuals"
+                Value="True" />
+        <Setter Property="ui:FocusVisualHelper.FocusVisualMargin"
+                Value="-3" />
+        <Setter Property="ui:FocusVisualHelper.FocusVisualPrimaryBrush"
+                Value="{StaticResource Teal}" />
+        <Setter Property="ui:FocusVisualHelper.FocusVisualSecondaryBrush"
+                Value="{StaticResource Teal}" />
+        <Setter Property="ui:FocusVisualHelper.FocusVisualPrimaryThickness"
+                Value="1" />
+        <Setter Property="ui:FocusVisualHelper.FocusVisualSecondaryThickness"
+                Value="1" />
+        <Setter Property="Template">
+            <Setter.Value>
+                <ControlTemplate TargetType="{x:Type ui:HyperlinkButton}">
+                    <TextBlock Name="tb"
+                               Foreground="{TemplateBinding Foreground}"
+                               Background="{TemplateBinding Background}"
+                               FontSize="{TemplateBinding FontSize}"
+                               TextTrimming="CharacterEllipsis"
+                               TextWrapping="NoWrap"
+                               Text="{TemplateBinding Content}">
+                        <!--<ContentPresenter Content="{TemplateBinding Content}"/> proc pres ContentPresernter a ne pres TB.TEXT?  ..pres presenter nefunguje textTrimming apod. -->
+                    </TextBlock>
+                    <ControlTemplate.Triggers>
+                        <Trigger Property="IsMouseOver"
+                                 Value="True">
+                            <Setter Property="Foreground"
+                                    Value="{DynamicResource Teal}" />
+                            <Setter TargetName="tb"
+                                    Property="TextDecorations"
+                                    Value="{DynamicResource UnderlineDecoration}" />
+                        </Trigger>
+                        <Trigger Property="IsPressed"
+                                 Value="True">
+                            <Setter Property="Foreground"
+                                    Value="{DynamicResource DarkerTeal}" />
+                        </Trigger>
+                        <Trigger Property="IsEnabled"
+                                 Value="False">
+                            <Setter Property="Foreground"
+                                    Value="{DynamicResource DimGray}" />
+                        </Trigger>
+                    </ControlTemplate.Triggers>
+                </ControlTemplate>
+            </Setter.Value>
+        </Setter>
+    </Style>
+
+    <Style TargetType="ui:HyperlinkButton"
+           x:Key="HyperlinkButtonDeleteSealProfile"
+           BasedOn="{StaticResource HyperlinkButtonBase}">
+        <Setter Property="Foreground"
+                Value="{DynamicResource ErrorRed}" />
+        <Setter Property="Template">
+            <Setter.Value>
+                <ControlTemplate TargetType="{x:Type ui:HyperlinkButton}">
+                    <TextBlock x:Name="tb"
+                               Foreground="{TemplateBinding Foreground}"
+                               Background="{TemplateBinding Background}"
+                               FontSize="{TemplateBinding FontSize}"
+                               TextDecorations="{StaticResource UnderlineDecoration}">
+                        <ContentPresenter Content="{TemplateBinding Content}" />
+                    </TextBlock>
+                    <ControlTemplate.Triggers>
+                        <Trigger Property="IsMouseOver"
+                                 Value="True">
+                            <Setter Property="Foreground"
+                                    Value="{DynamicResource ErrorBtnIsMouseOver}" />
+                        </Trigger>
+                        <Trigger Property="IsPressed"
+                                 Value="True">
+                            <Setter Property="Foreground"
+                                    Value="{DynamicResource ErrorBtnIsPressed}" />
+                        </Trigger>
+                        <Trigger Property="IsEnabled"
+                                 Value="False">
+                            <Setter Property="Opacity"
+                                    Value="0.5" />
+                        </Trigger>
+                    </ControlTemplate.Triggers>
+                </ControlTemplate>
+            </Setter.Value>
+        </Setter>
+    </Style>
+
+    <Style TargetType="Button"
+           x:Key="ButtonShare"
+           BasedOn="{StaticResource DefaultButtonStyle}">
+        <Setter Property="Foreground"
+                Value="{DynamicResource DarkBlue}" />
+        <Setter Property="Margin"
+                Value="5,3" />
+        <Setter Property="Padding"
+                Value="0" />
+        <Setter Property="FontSize"
+                Value="16" />
+        <Setter Property="Height"
+                Value="35" />
+        <Setter Property="ui:FocusVisualHelper.UseSystemFocusVisuals"
+                Value="True" />
+        <Setter Property="ui:FocusVisualHelper.FocusVisualMargin"
+                Value="-3" />
+        <Setter Property="ui:FocusVisualHelper.FocusVisualPrimaryBrush"
+                Value="{StaticResource Teal}" />
+        <Setter Property="ui:FocusVisualHelper.FocusVisualSecondaryBrush"
+                Value="{StaticResource Teal}" />
+        <Setter Property="ui:FocusVisualHelper.FocusVisualPrimaryThickness"
+                Value="1" />
+        <Setter Property="ui:FocusVisualHelper.FocusVisualSecondaryThickness"
+                Value="1" />
+        <Setter Property="Template">
+            <Setter.Value>
+                <ControlTemplate TargetType="{x:Type Button}">
+                    <Border BorderBrush="{StaticResource Transparent}"
+                            Background="{StaticResource Transparent}"
+                            BorderThickness="1"
+                            Margin="{TemplateBinding Margin}"
+                            Height="{TemplateBinding Height}"
+                            Width="{TemplateBinding Width}">
+                        <DockPanel>
+                            <Viewbox Stretch="Uniform"
+                                     Margin="0,0,5,0"
+                                     Width="24"
+                                     Height="24">
+                                <Canvas Name="svg3922"
+                                        Width="24"
+                                        Height="24">
+                                    <Canvas.RenderTransform>
+                                        <TranslateTransform X="0"
+                                                            Y="0" />
+                                    </Canvas.RenderTransform>
+                                    <Canvas.Resources />
+                                    <Path Name="Path1"
+                                          StrokeThickness="2"
+                                          Stroke="{TemplateBinding Foreground}">
+                                        <Path.Data>
+                                            <PathGeometry Figures="M15 10H17C18.1046 10 19 10.8954 19 12V20C19 21.1046 18.1046 22 17 22H7C5.89543 22 5 21.1046 5 20V12C5 10.8954 5.89543 10 7 10H9"
+                                                          FillRule="NonZero" />
+                                        </Path.Data>
+                                    </Path>
+                                    <Path Name="Path2"
+                                          StrokeThickness="2"
+                                          Stroke="{TemplateBinding Foreground}">
+                                        <Path.Data>
+                                            <PathGeometry Figures="M12 15V3M12 3L8 7M12 3L16 7"
+                                                          FillRule="NonZero" />
+                                        </Path.Data>
+                                    </Path>
+                                </Canvas>
+                            </Viewbox>
+                            <TextBlock Name="tb"
+                                       Foreground="{TemplateBinding Foreground}"
+                                       VerticalAlignment="Center"> 
+                                <ContentPresenter Content="{TemplateBinding Content}" />
+                            </TextBlock>
+                        </DockPanel>
+                    </Border>
+                    <ControlTemplate.Triggers>
+                        <Trigger Property="IsMouseOver"
+                                 Value="True">
+                            <Setter TargetName="tb"
+                                    Property="Foreground"
+                                    Value="{DynamicResource Teal}" />
+                            <Setter TargetName="Path1"
+                                    Property="Stroke"
+                                    Value="{DynamicResource Teal}" />
+                            <Setter TargetName="Path2"
+                                    Property="Stroke"
+                                    Value="{DynamicResource Teal}" />
+                            <Setter TargetName="tb"
+                                    Property="TextDecorations"
+                                    Value="{DynamicResource UnderlineDecoration}" />
+                        </Trigger>
+                        <Trigger Property="IsPressed"
+                                 Value="True">
+                            <Setter TargetName="tb"
+                                    Property="Foreground"
+                                    Value="{DynamicResource DarkerTeal}" />
+                            <Setter TargetName="Path1"
+                                    Property="Stroke"
+                                    Value="{DynamicResource DarkerTeal}" />
+                            <Setter TargetName="Path2"
+                                    Property="Stroke"
+                                    Value="{DynamicResource DarkerTeal}" />
+                        </Trigger>
+                    </ControlTemplate.Triggers>
+                </ControlTemplate>
+            </Setter.Value>
+        </Setter>
+    </Style>
+
+    <!-- TabControl (to show seal proccess steps) -->
+    <Style TargetType="TabItem"
+           BasedOn="{StaticResource TabItemPivotStyle}"
+           x:Key="TabItemBase">
+        <Setter Property="OverridesDefaultStyle"
+                Value="True" />
+        <Setter Property="Background"
+                Value="{DynamicResource Transparent}" />
+        <Setter Property="BorderBrush"
+                Value="{StaticResource Transparent}" />
+        <Setter Property="BorderThickness"
+                Value="0" />
+        <Setter Property="FontSize"
+                Value="14" />
+        <Setter Property="Padding"
+                Value="{DynamicResource PivotHeaderItemMargin}" />
+        <Setter Property="HorizontalContentAlignment"
+                Value="Stretch" />
+        <Setter Property="VerticalContentAlignment"
+                Value="Stretch" />
+        <Setter Property="FocusVisualStyle"
+                Value="{DynamicResource {x:Static SystemParameters.FocusVisualStyleKey}}" />
+        <Setter Property="ui:FocusVisualHelper.UseSystemFocusVisuals"
+                Value="True" />
+        <Setter Property="ui:FocusVisualHelper.FocusVisualMargin"
+                Value="-3" />
+        <Setter Property="ui:FocusVisualHelper.FocusVisualPrimaryBrush"
+                Value="{StaticResource Teal}" />
+        <Setter Property="ui:FocusVisualHelper.FocusVisualSecondaryBrush"
+                Value="{StaticResource Teal}" />
+        <Setter Property="Template">
+            <Setter.Value>
+                <ControlTemplate TargetType="TabItem">
+                    <Border x:Name="Border"
+                            Background="{StaticResource Transparent}"
+                            Padding="{TemplateBinding Padding}"
+                            SnapsToDevicePixels="True">
+                        <Grid>
+                            <ContentPresenter x:Name="ContentPresenter"
+                                              ContentSource="Header"
+                                              TextBlock.Foreground="{StaticResource DimGray}"
+                                              VerticalAlignment="Center"
+                                              HorizontalAlignment="Stretch"
+                                              Focusable="False"
+                                              RecognizesAccessKey="True"
+                                              SnapsToDevicePixels="{TemplateBinding SnapsToDevicePixels}" />
+                            <Rectangle x:Name="SelectedPipe"
+                                       Fill="{DynamicResource Teal}"
+                                       Height="2"
+                                       VerticalAlignment="Bottom"
+                                       HorizontalAlignment="Left"
+                                       Width="32"
+                                       Margin="0,0,0,2" />
+                        </Grid>
+                    </Border>
+                    <ControlTemplate.Triggers>
+                        <!-- Unselected -->
+                        <MultiTrigger>
+                            <MultiTrigger.Conditions>
+                                <Condition Property="IsSelected"
+                                           Value="False" />
+                                <Condition SourceName="Border"
+                                           Property="IsMouseOver"
+                                           Value="False" />
+                            </MultiTrigger.Conditions>
+                            <Setter TargetName="SelectedPipe"
+                                    Property="Visibility"
+                                    Value="Collapsed" />
+                        </MultiTrigger>
+                        <!-- Selected -->
+                        <MultiTrigger>
+                            <MultiTrigger.Conditions>
+                                <Condition Property="IsSelected"
+                                           Value="True" />
+                                <Condition SourceName="Border"
+                                           Property="IsMouseOver"
+                                           Value="False" />
+                            </MultiTrigger.Conditions>
+                            <Setter TargetName="SelectedPipe"
+                                    Property="Visibility"
+                                    Value="Visible" />
+                            <Setter Property="Panel.ZIndex"
+                                    Value="1" />
+                            <Setter TargetName="ContentPresenter"
+                                    Property="TextBlock.Foreground"
+                                    Value="{DynamicResource DarkBlue}" />
+                        </MultiTrigger>
+                        <!-- UnselectedPointerOver -->
+                        <MultiTrigger>
+                            <MultiTrigger.Conditions>
+                                <Condition Property="IsSelected"
+                                           Value="False" />
+                                <Condition SourceName="Border"
+                                           Property="IsMouseOver"
+                                           Value="True" />
+                            </MultiTrigger.Conditions>
+                            <Setter TargetName="ContentPresenter"
+                                    Property="TextElement.Foreground"
+                                    Value="{DynamicResource DarkBlue}" />
+                            <Setter TargetName="Border"
+                                    Property="Background"
+                                    Value="{DynamicResource PivotHeaderItemBackgroundUnselectedPointerOver}" />
+                            <Setter TargetName="SelectedPipe"
+                                    Property="Visibility"
+                                    Value="Collapsed" />
+                        </MultiTrigger>
+                        <!-- SelectedPointerOver -->
+                        <MultiTrigger>
+                            <MultiTrigger.Conditions>
+                                <Condition Property="IsSelected"
+                                           Value="True" />
+                                <Condition SourceName="Border"
+                                           Property="IsMouseOver"
+                                           Value="True" />
+                            </MultiTrigger.Conditions>
+                            <Setter Property="Panel.ZIndex"
+                                    Value="1" />
+                            <Setter TargetName="ContentPresenter"
+                                    Property="TextElement.Foreground"
+                                    Value="{DynamicResource DarkBlue}" />
+                            <Setter TargetName="Border"
+                                    Property="Background"
+                                    Value="{DynamicResource PivotHeaderItemBackgroundSelectedPointerOver}" />
+                        </MultiTrigger>
+                        <Trigger Property="IsEnabled"
+                                 Value="False">
+                            <Setter TargetName="ContentPresenter"
+                                    Property="TextElement.Foreground"
+                                    Value="{DynamicResource PivotHeaderItemForegroundDisabled}" />
+                            <Setter TargetName="Border"
+                                    Property="Background"
+                                    Value="{DynamicResource PivotHeaderItemBackgroundDisabled}" />
+                            <Setter TargetName="SelectedPipe"
+                                    Property="Visibility"
+                                    Value="Collapsed" />
+                        </Trigger>
+                    </ControlTemplate.Triggers>
+                </ControlTemplate>
+            </Setter.Value>
+        </Setter>
+    </Style>
+
+    <Style TargetType="TabControl"
+           BasedOn="{StaticResource TabControlPivotStyle}"
+           x:Key="SealProccessStepsVisualiser">
+        <Setter Property="ItemContainerStyle"
+                Value="{StaticResource TabItemBase}" />
+        <Setter Property="IsHitTestVisible"
+                Value="False" />
+    </Style>
+
+    <!-- RadioButton (toggle buttons for change of language -->
+
+    <Style TargetType="RadioButton"
+           x:Key="LanguageToggleButton"
+           BasedOn="{StaticResource DefaultRadioButtonStyle}">
+        <Setter Property="FontSize"
+                Value="14" />
+        <Setter Property="VerticalAlignment"
+                Value="Center" />
+        <Setter Property="Margin"
+                Value="5,3" />
+        <Setter Property="Padding"
+                Value="0" />
+        <Setter Property="Foreground"
+                Value="{DynamicResource DimGray}" />
+        <Setter Property="ui:FocusVisualHelper.UseSystemFocusVisuals"
+                Value="True" />
+        <Setter Property="ui:FocusVisualHelper.FocusVisualMargin"
+                Value="-3" />
+        <Setter Property="ui:FocusVisualHelper.FocusVisualPrimaryBrush"
+                Value="{StaticResource Teal}" />
+        <Setter Property="ui:FocusVisualHelper.FocusVisualSecondaryBrush"
+                Value="{StaticResource Teal}" />
+        <Setter Property="ui:FocusVisualHelper.FocusVisualPrimaryThickness"
+                Value="1" />
+        <Setter Property="ui:FocusVisualHelper.FocusVisualSecondaryThickness"
+                Value="1" />
+        <Setter Property="MinWidth"
+                Value="0" />
+        <Setter Property="Template">
+            <Setter.Value>
+                <ControlTemplate TargetType="{x:Type RadioButton}">
+                    <Border BorderBrush="{StaticResource Transparent}"
+                            BorderThickness="1"
+                            Background="{StaticResource Transparent}"
+                            Width="{TemplateBinding Width}">
+                        <TextBlock Name="TB"
+                                   Foreground="{TemplateBinding Foreground}"
+                                   FontSize="{TemplateBinding FontSize}"
+                                   Margin="{TemplateBinding Margin}">
+                                <ContentPresenter Content="{TemplateBinding Content}" />
+                        </TextBlock>
+                    </Border>
+                    <ControlTemplate.Triggers>
+                        <Trigger Property="IsMouseOver"
+                                 Value="True">
+                            <Setter TargetName="TB"
+                                    Property="Foreground"
+                                    Value="{DynamicResource Teal}" />
+                        </Trigger>
+                        <Trigger Property="IsPressed"
+                                 Value="True">
+                            <Setter TargetName="TB"
+                                    Property="Foreground"
+                                    Value="{DynamicResource DarkerTeal}" />
+                        </Trigger>
+                        <Trigger Property="IsChecked"
+                                 Value="True">
+                            <Setter TargetName="TB"
+                                    Property="Foreground"
+                                    Value="{DynamicResource DarkBlue}" />
+                        </Trigger>
+                    </ControlTemplate.Triggers>
+                </ControlTemplate>
+            </Setter.Value>
+        </Setter>
+    </Style>
+
+    <Style TargetType="Separator"
+           x:Key="LanguageToggleButtonsSeparator">
+        <Setter Property="Margin"
+                Value="0,8" />
+        <Setter Property="Template">
+            <Setter.Value>
+                <ControlTemplate TargetType="{x:Type Separator}">
+                    <Border Width="2"
+                            Height="{TemplateBinding Height}"
+                            BorderThickness="1"
+                            BorderBrush="{StaticResource Lavender}"
+                            Margin="{TemplateBinding Margin}" />
+                </ControlTemplate>
+            </Setter.Value>
+        </Setter>
+    </Style>
+
+    <!-- GridView  -->
+
+    <Style TargetType="ui:GridViewItem"
+           x:Key="GridViewItemBase">
+        <Setter Property="OverridesDefaultStyle"
+                Value="True" />
+        <Setter Property="VerticalContentAlignment"
+                Value="Top" />
+        <Setter Property="VerticalAlignment"
+                Value="Top" />
+        <Setter Property="Background"
+                Value="{StaticResource Transparent}" />
+        <Setter Property="BorderBrush"
+                Value="{DynamicResource Lavender}" />
+        <Setter Property="BorderThickness"
+                Value="0" />
+        <Setter Property="ui:FocusVisualHelper.UseSystemFocusVisuals"
+                Value="True" />
+        <Setter Property="ui:FocusVisualHelper.FocusVisualMargin"
+                Value="0" />
+        <Setter Property="ui:FocusVisualHelper.FocusVisualPrimaryBrush"
+                Value="{StaticResource Teal}" />
+        <Setter Property="ui:FocusVisualHelper.FocusVisualSecondaryBrush"
+                Value="{StaticResource Teal}" />
+        <Setter Property="ui:FocusVisualHelper.FocusVisualPrimaryThickness"
+                Value="1" />
+        <Setter Property="ui:FocusVisualHelper.FocusVisualSecondaryThickness"
+                Value="1" />
+    </Style>
+
+    <Style TargetType="ui:GridViewItem"
+           x:Key="GridViewItemSelectCert"
+           BasedOn="{StaticResource GridViewItemBase}">
+        <Setter Property="Template"
+                Value="{StaticResource GridViewItemSelectCertTemplate}" />
+    </Style>
+
+    <Style TargetType="ui:GridViewItem"
+           x:Key="GridViewItemSelectSealProfile"
+           BasedOn="{StaticResource GridViewItemBase}">
+        <Setter Property="Template"
+                Value="{StaticResource GridViewItemSelectSealProfileTemplate}" />
+    </Style>
+
+    <Style TargetType="ui:GridViewItem"
+           x:Key="GridViewItemFilesToSeal"
+           BasedOn="{StaticResource GridViewItemBase}">
+        <Setter Property="Template"
+                Value="{StaticResource GridViewItemFilesToSealTemplate}" />
+    </Style>
+
+    <Style TargetType="ui:GridView"
+           x:Key="GridViewBase">
+        <Setter Property="Margin"
+                Value="5" />
+        <Setter Property="SelectionMode"
+                Value="Single" />
+    </Style>
+
+    <Style TargetType="ui:GridView"
+           x:Key="GridViewSelectCert"
+           BasedOn="{StaticResource GridViewBase}">
+        <Setter Property="ItemContainerStyle"
+                Value="{StaticResource GridViewItemSelectCert}" />
+    </Style>
+
+    <Style TargetType="ui:GridView"
+           x:Key="GridViewSelectSealProfile"
+           BasedOn="{StaticResource GridViewBase}">
+        <Setter Property="ItemContainerStyle"
+                Value="{StaticResource GridViewItemSelectSealProfile}" />
+    </Style>
+
+    <Style TargetType="ui:GridView"
+           x:Key="GridViewFilesToSeal"
+           BasedOn="{StaticResource GridViewBase}">
+        <Setter Property="ItemContainerStyle"
+                Value="{StaticResource GridViewItemFilesToSeal}" />
+    </Style>
+    
+    
+    <Style x:Key="FocusVisual">
+        <Setter Property="Control.Template">
+            <Setter.Value>
+                <ControlTemplate>
+                    <Rectangle Margin="2"
+                               StrokeDashArray="1 2"
+                               SnapsToDevicePixels="true"
+                               StrokeThickness="1"
+                               Stroke="{DynamicResource {x:Static SystemColors.ControlTextBrushKey}}" />
+                </ControlTemplate>
+            </Setter.Value>
+        </Setter>
+    </Style>
+    
+    <SolidColorBrush x:Key="Item.MouseOver.Background"
+                     Color="Transparent" />
+    <SolidColorBrush x:Key="Item.MouseOver.Border"
+                     Color="{StaticResource TealColor}" />
+    <SolidColorBrush x:Key="Item.SelectedActive.Background"
+                     Color="Transparent" />
+    <SolidColorBrush x:Key="Item.SelectedActive.Border"
+                     Color="{StaticResource DarkTealColor}" />
+    <SolidColorBrush x:Key="Item.SelectedInactive.Background"
+                     Color="#3DDADADA" />
+    <SolidColorBrush x:Key="Item.SelectedInactive.Border"
+                     Color="#FFDADADA" />
+    <Style x:Key="GridViewItemContainerStyle1"
+           TargetType="{x:Type ListBoxItem}">
+        <Setter Property="SnapsToDevicePixels"
+                Value="True" />
+        <Setter Property="Padding"
+                Value="0" />
+        <Setter Property="HorizontalContentAlignment"
+                Value="{Binding HorizontalContentAlignment, RelativeSource={RelativeSource AncestorType={x:Type ItemsControl}}}" />
+        <Setter Property="VerticalContentAlignment"
+                Value="Top" />
+        <Setter Property="Background"
+                Value="Transparent" />
+        <Setter Property="BorderBrush"
+                Value="Transparent" />
+        <Setter Property="BorderThickness"
+                Value="2" />
+        <Setter Property="FocusVisualStyle"
+                Value="{StaticResource FocusVisual}" />
+        <Setter Property="Template">
+            <Setter.Value>
+                <ControlTemplate TargetType="{x:Type ListBoxItem}">
+                    <Border x:Name="Bd"
+                            Background="{TemplateBinding Background}"
+                            BorderThickness="{TemplateBinding BorderThickness}"
+                            BorderBrush="{TemplateBinding BorderBrush}"
+                            Padding="{TemplateBinding Padding}"
+                            SnapsToDevicePixels="true">
+                        <ContentPresenter HorizontalAlignment="{TemplateBinding HorizontalContentAlignment}"
+                                          SnapsToDevicePixels="{TemplateBinding SnapsToDevicePixels}"
+                                          VerticalAlignment="{TemplateBinding VerticalContentAlignment}" />
+                    </Border>
+                    <ControlTemplate.Triggers>
+                        <MultiTrigger>
+                            <MultiTrigger.Conditions>
+                                <Condition Property="IsMouseOver"
+                                           Value="True" />
+                            </MultiTrigger.Conditions>
+                            <Setter Property="Background"
+                                    TargetName="Bd"
+                                    Value="{StaticResource Item.MouseOver.Background}" />
+                            <Setter Property="BorderBrush"
+                                    TargetName="Bd"
+                                    Value="{StaticResource Item.MouseOver.Border}" />
+                        </MultiTrigger>
+                        <MultiTrigger>
+                            <MultiTrigger.Conditions>
+                                <Condition Property="Selector.IsSelectionActive"
+                                           Value="False" />
+                                <Condition Property="IsSelected"
+                                           Value="True" />
+                            </MultiTrigger.Conditions>
+                            <Setter Property="Background"
+                                    TargetName="Bd"
+                                    Value="{StaticResource Item.SelectedInactive.Background}" />
+                            <Setter Property="BorderBrush"
+                                    TargetName="Bd"
+                                    Value="{StaticResource Item.SelectedInactive.Border}" />
+                        </MultiTrigger>
+                        <MultiTrigger>
+                            <MultiTrigger.Conditions>
+                                <Condition Property="Selector.IsSelectionActive"
+                                           Value="True" />
+                                <Condition Property="IsSelected"
+                                           Value="True" />
+                            </MultiTrigger.Conditions>
+                            <Setter Property="Background"
+                                    TargetName="Bd"
+                                    Value="{StaticResource Item.SelectedActive.Background}" />
+                            <Setter Property="BorderBrush"
+                                    TargetName="Bd"
+                                    Value="{StaticResource Item.SelectedActive.Border}" />
+                        </MultiTrigger>
+                        <Trigger Property="IsEnabled"
+                                 Value="False">
+                            <Setter Property="TextElement.Foreground"
+                                    TargetName="Bd"
+                                    Value="{DynamicResource {x:Static SystemColors.GrayTextBrushKey}}" />
+                        </Trigger>
+                    </ControlTemplate.Triggers>
+                </ControlTemplate>
+            </Setter.Value>
+        </Setter>
+    </Style>
+    
+    <!-- Expander -->
+
+    <Style x:Key="ExpanderWithSealError"
+           TargetType="{x:Type Expander}"
+           BasedOn="{StaticResource DefaultExpanderStyle}">
+        <Setter Property="OverridesDefaultStyle"
+                Value="True" />
+        <Setter Property="Background"
+                Value="Transparent" />
+        <Setter Property="HorizontalContentAlignment"
+                Value="Stretch" />
+        <Setter Property="VerticalContentAlignment"
+                Value="Stretch" />
+        <Setter Property="ui:FocusVisualHelper.UseSystemFocusVisuals"
+                Value="True" />
+        <Setter Property="ui:FocusVisualHelper.FocusVisualMargin"
+                Value="0" />
+        <Setter Property="ui:FocusVisualHelper.FocusVisualPrimaryBrush"
+                Value="{StaticResource Teal}" />
+        <Setter Property="ui:FocusVisualHelper.FocusVisualSecondaryBrush"
+                Value="{StaticResource Teal}" />
+        <Setter Property="ui:FocusVisualHelper.FocusVisualPrimaryThickness"
+                Value="1" />
+        <Setter Property="ui:FocusVisualHelper.FocusVisualSecondaryThickness"
+                Value="1" />
+        <Setter Property="Template">
+            <Setter.Value>
+                <ControlTemplate TargetType="{x:Type Expander}">
+                    <Border BorderBrush="{StaticResource Lavender}"
+                            BorderThickness="1"
+                            Background="{StaticResource Transparent}"
+                            Margin="0,5"
+                            CornerRadius="3"
+                            SnapsToDevicePixels="True"
+                            Padding="10"
+                            Width="{TemplateBinding Width}"
+                            Height="{TemplateBinding Height}">
+                        <DockPanel>
+                            <DockPanel DockPanel.Dock="Top"
+                                       LastChildFill="True">
+                                <Image Source="../Images/ErrorIconFilled.png"
+                                       Style="{StaticResource ImageInsideButton}"
+                                       VerticalAlignment="Center" />
+                                <ToggleButton x:Name="HeaderSite"
+                                              ContentTemplate="{TemplateBinding HeaderTemplate}"
+                                              DockPanel.Dock="Right"
+                                              Foreground="{StaticResource DarkBlue}"
+                                              VerticalAlignment="Center"
+                                              ui:FocusVisualHelper.FocusVisualMargin="-3"
+                                              FocusVisualStyle="{DynamicResource {x:Static SystemParameters.FocusVisualStyleKey}}"
+                                              IsChecked="{Binding IsExpanded, Mode=TwoWay, RelativeSource={RelativeSource TemplatedParent}}"
+                                              Margin="1"
+                                              MinWidth="0"
+                                              MinHeight="0"
+                                              Padding="{TemplateBinding Padding}"
+                                              ui:FocusVisualHelper.UseSystemFocusVisuals="True"
+                                              VerticalContentAlignment="{TemplateBinding VerticalContentAlignment}">
+                                    <ToggleButton.Style>
+                                        <Style TargetType="{x:Type ToggleButton}"
+                                               BasedOn="{StaticResource DefaultToggleButtonStyle}">
+                                            <Setter Property="ui:FocusVisualHelper.UseSystemFocusVisuals"
+                                                    Value="True" />
+                                            <Setter Property="ui:FocusVisualHelper.FocusVisualMargin"
+                                                    Value="0" />
+                                            <Setter Property="ui:FocusVisualHelper.FocusVisualPrimaryBrush"
+                                                    Value="{StaticResource Teal}" />
+                                            <Setter Property="ui:FocusVisualHelper.FocusVisualSecondaryBrush"
+                                                    Value="{StaticResource Teal}" />
+                                            <Setter Property="ui:FocusVisualHelper.FocusVisualPrimaryThickness"
+                                                    Value="1" />
+                                            <Setter Property="ui:FocusVisualHelper.FocusVisualSecondaryThickness"
+                                                    Value="1" />
+                                            <Setter Property="Template">
+                                                <Setter.Value>
+                                                    <ControlTemplate TargetType="{x:Type ToggleButton}">
+                                                        <ControlTemplate.Resources>
+                                                            <StreamGeometry x:Key="ChevronDown">M18.935547,4.560547L19.814453,5.439453 10,15.253906 0.185547,5.439453 1.064453,4.560547 10,13.496094z</StreamGeometry>
+                                                            <StreamGeometry x:Key="ChevronUp">M19.091797,14.970703L10,5.888672 0.908203,14.970703 0.029297,14.091797 10,4.111328 19.970703,14.091797z</StreamGeometry>
+                                                        </ControlTemplate.Resources>
+                                                        <Border Padding="{TemplateBinding Padding}">
+                                                            <Grid Background="Transparent"
+                                                                  SnapsToDevicePixels="False">
+                                                                <Grid.ColumnDefinitions>
+                                                                    <ColumnDefinition Width="Auto" />
+                                                                    <ColumnDefinition Width="*" />
+                                                                </Grid.ColumnDefinitions>
+                                                                <ui:FontIconFallback x:Name="arrow"
+                                                                                     Data="M18.935547,4.560547L19.814453,5.439453 10,15.253906 0.185547,5.439453 1.064453,4.560547 10,13.496094z"
+                                                                                     Foreground="{DynamicResource DarkBlue}"
+                                                                                     FontSize="20"
+                                                                                     FontFamily="{DynamicResource SymbolThemeFontFamily}"
+                                                                                     HorizontalAlignment="Center"
+                                                                                     SnapsToDevicePixels="False"
+                                                                                     FontWeight="Bold"
+                                                                                     VerticalAlignment="Center" />
+                                                                <ContentPresenter ContentTemplate="{TemplateBinding ContentTemplate}"
+                                                                                  Content="{TemplateBinding Content}"
+                                                                                  Grid.Column="1"
+                                                                                  ContentStringFormat="{TemplateBinding ContentStringFormat}"
+                                                                                  HorizontalAlignment="Left"
+                                                                                  Margin="5"
+                                                                                  RecognizesAccessKey="True"
+                                                                                  SnapsToDevicePixels="True"
+                                                                                  VerticalAlignment="Center" />
+                                                            </Grid>
+                                                        </Border>
+                                                        <ControlTemplate.Triggers>
+                                                            <Trigger Property="IsChecked"
+                                                                     Value="True">
+                                                                <Setter Property="Data"
+                                                                        TargetName="arrow"
+                                                                        Value="M19.091797,14.970703L10,5.888672 0.908203,14.970703 0.029297,14.091797 10,4.111328 19.970703,14.091797z" />
+                                                            </Trigger>
+                                                            <Trigger Property="IsMouseOver"
+                                                                     Value="True">
+                                                                <Setter Property="Foreground"
+                                                                        TargetName="arrow"
+                                                                        Value="{DynamicResource DarkBlue}" />
+                                                                <Setter Property="FontSize"
+                                                                        TargetName="arrow"
+                                                                        Value="22" />
+                                                            </Trigger>
+                                                            <Trigger Property="IsPressed"
+                                                                     Value="True">
+                                                                <Setter Property="Foreground"
+                                                                        TargetName="arrow"
+                                                                        Value="{DynamicResource DarkBlue}" />
+                                                                <Setter Property="FontSize"
+                                                                        TargetName="arrow"
+                                                                        Value="24" />
+                                                            </Trigger>
+                                                            <Trigger Property="IsEnabled"
+                                                                     Value="False">
+                                                                <Setter Property="Foreground"
+                                                                        TargetName="arrow"
+                                                                        Value="{DynamicResource SystemControlDisabledBaseMediumLowBrush}" />
+                                                            </Trigger>
+                                                        </ControlTemplate.Triggers>
+                                                    </ControlTemplate>
+                                                </Setter.Value>
+                                            </Setter>
+                                        </Style>
+                                    </ToggleButton.Style>
+                                </ToggleButton>
+                                <TextBlock Text="{TemplateBinding Header}"
+                                           Style="{StaticResource P}"
+                                           Foreground="{StaticResource DarkBlue}" />
+                            </DockPanel>
+
+                            <ContentPresenter x:Name="ExpandSite"
+                                              ContentTemplate="{TemplateBinding ContentTemplate}"
+                                              Content="{TemplateBinding Content}"
+                                              ContentStringFormat="{TemplateBinding ContentStringFormat}"
+                                              DockPanel.Dock="Bottom"
+                                              Focusable="False"
+                                              HorizontalAlignment="{TemplateBinding HorizontalContentAlignment}"
+                                              Margin="{TemplateBinding Padding}"
+                                              Visibility="Collapsed"
+                                              VerticalAlignment="{TemplateBinding VerticalContentAlignment}" />
+                        </DockPanel>
+                    </Border>
+                    <ControlTemplate.Triggers>
+                        <Trigger Property="IsExpanded"
+                                 Value="True">
+                            <Setter Property="Visibility"
+                                    TargetName="ExpandSite"
+                                    Value="Visible" />
+                        </Trigger>
+                        <Trigger Property="ExpandDirection"
+                                 Value="Right">
+                            <Setter Property="DockPanel.Dock"
+                                    TargetName="ExpandSite"
+                                    Value="Right" />
+                            <Setter Property="DockPanel.Dock"
+                                    TargetName="HeaderSite"
+                                    Value="Left" />
+                            <Setter Property="Style"
+                                    TargetName="HeaderSite">
+                                <Setter.Value>
+                                    <Style TargetType="{x:Type ToggleButton}">
+                                        <Setter Property="Template">
+                                            <Setter.Value>
+                                                <ControlTemplate TargetType="{x:Type ToggleButton}">
+                                                    <ControlTemplate.Resources>
+                                                        <StreamGeometry x:Key="ChevronDown">M18.935547,4.560547L19.814453,5.439453 10,15.253906 0.185547,5.439453 1.064453,4.560547 10,13.496094z</StreamGeometry>
+                                                        <StreamGeometry x:Key="ChevronUp">M19.091797,14.970703L10,5.888672 0.908203,14.970703 0.029297,14.091797 10,4.111328 19.970703,14.091797z</StreamGeometry>
+                                                    </ControlTemplate.Resources>
+                                                    <Border Padding="{TemplateBinding Padding}">
+                                                        <Grid Background="Transparent"
+                                                              SnapsToDevicePixels="False">
+                                                            <Grid.RowDefinitions>
+                                                                <RowDefinition Height="Auto" />
+                                                                <RowDefinition Height="*" />
+                                                            </Grid.RowDefinitions>
+                                                            <Grid>
+                                                                <Grid.LayoutTransform>
+                                                                    <TransformGroup>
+                                                                        <RotateTransform Angle="-90" />
+                                                                    </TransformGroup>
+                                                                </Grid.LayoutTransform>
+                                                                <ui:FontIconFallback x:Name="arrow"
+                                                                                     Data="M18.935547,4.560547L19.814453,5.439453 10,15.253906 0.185547,5.439453 1.064453,4.560547 10,13.496094z"
+                                                                                     Foreground="{DynamicResource SystemControlForegroundBaseHighBrush}"
+                                                                                     FontSize="12"
+                                                                                     FontFamily="{DynamicResource SymbolThemeFontFamily}"
+                                                                                     HorizontalAlignment="Center"
+                                                                                     SnapsToDevicePixels="False"
+                                                                                     VerticalAlignment="Center" />
+                                                            </Grid>
+                                                            <ContentPresenter ContentTemplate="{TemplateBinding ContentTemplate}"
+                                                                              Content="{TemplateBinding Content}"
+                                                                              ContentStringFormat="{TemplateBinding ContentStringFormat}"
+                                                                              HorizontalAlignment="Center"
+                                                                              Margin="0,4,0,0"
+                                                                              Grid.Row="1"
+                                                                              RecognizesAccessKey="True"
+                                                                              SnapsToDevicePixels="True"
+                                                                              VerticalAlignment="Top" />
+                                                        </Grid>
+                                                    </Border>
+                                                    <ControlTemplate.Triggers>
+                                                        <Trigger Property="IsChecked"
+                                                                 Value="True">
+                                                            <Setter Property="Data"
+                                                                    TargetName="arrow"
+                                                                    Value="M19.091797,14.970703L10,5.888672 0.908203,14.970703 0.029297,14.091797 10,4.111328 19.970703,14.091797z" />
+                                                        </Trigger>
+                                                        <Trigger Property="IsMouseOver"
+                                                                 Value="True">
+                                                            <Setter Property="Foreground"
+                                                                    TargetName="arrow"
+                                                                    Value="{DynamicResource SystemControlPageTextBaseMediumBrush}" />
+                                                        </Trigger>
+                                                        <Trigger Property="IsPressed"
+                                                                 Value="True">
+                                                            <Setter Property="Foreground"
+                                                                    TargetName="arrow"
+                                                                    Value="{DynamicResource SystemControlHighlightBaseMediumLowBrush}" />
+                                                        </Trigger>
+                                                        <Trigger Property="IsEnabled"
+                                                                 Value="False">
+                                                            <Setter Property="Foreground"
+                                                                    TargetName="arrow"
+                                                                    Value="{DynamicResource SystemControlDisabledBaseMediumLowBrush}" />
+                                                        </Trigger>
+                                                    </ControlTemplate.Triggers>
+                                                </ControlTemplate>
+                                            </Setter.Value>
+                                        </Setter>
+                                    </Style>
+                                </Setter.Value>
+                            </Setter>
+                        </Trigger>
+                        <Trigger Property="ExpandDirection"
+                                 Value="Up">
+                            <Setter Property="DockPanel.Dock"
+                                    TargetName="ExpandSite"
+                                    Value="Top" />
+                            <Setter Property="DockPanel.Dock"
+                                    TargetName="HeaderSite"
+                                    Value="Bottom" />
+                            <Setter Property="Style"
+                                    TargetName="HeaderSite">
+                                <Setter.Value>
+                                    <Style TargetType="{x:Type ToggleButton}">
+                                        <Setter Property="Template">
+                                            <Setter.Value>
+                                                <ControlTemplate TargetType="{x:Type ToggleButton}">
+                                                    <ControlTemplate.Resources>
+                                                        <StreamGeometry x:Key="ChevronDown">M18.935547,4.560547L19.814453,5.439453 10,15.253906 0.185547,5.439453 1.064453,4.560547 10,13.496094z</StreamGeometry>
+                                                        <StreamGeometry x:Key="ChevronUp">M19.091797,14.970703L10,5.888672 0.908203,14.970703 0.029297,14.091797 10,4.111328 19.970703,14.091797z</StreamGeometry>
+                                                    </ControlTemplate.Resources>
+                                                    <Border Padding="{TemplateBinding Padding}">
+                                                        <Grid Background="Transparent"
+                                                              SnapsToDevicePixels="False">
+                                                            <Grid.ColumnDefinitions>
+                                                                <ColumnDefinition Width="Auto" />
+                                                                <ColumnDefinition Width="*" />
+                                                            </Grid.ColumnDefinitions>
+                                                            <Grid>
+                                                                <Grid.LayoutTransform>
+                                                                    <TransformGroup>
+                                                                        <RotateTransform Angle="180" />
+                                                                    </TransformGroup>
+                                                                </Grid.LayoutTransform>
+                                                                <ui:FontIconFallback x:Name="arrow"
+                                                                                     Data="M18.935547,4.560547L19.814453,5.439453 10,15.253906 0.185547,5.439453 1.064453,4.560547 10,13.496094z"
+                                                                                     Foreground="{DynamicResource SystemControlForegroundBaseHighBrush}"
+                                                                                     FontSize="12"
+                                                                                     FontFamily="{DynamicResource SymbolThemeFontFamily}"
+                                                                                     HorizontalAlignment="Center"
+                                                                                     SnapsToDevicePixels="False"
+                                                                                     VerticalAlignment="Center" />
+                                                            </Grid>
+                                                            <ContentPresenter ContentTemplate="{TemplateBinding ContentTemplate}"
+                                                                              Content="{TemplateBinding Content}"
+                                                                              Grid.Column="1"
+                                                                              ContentStringFormat="{TemplateBinding ContentStringFormat}"
+                                                                              HorizontalAlignment="Left"
+                                                                              Margin="8,0,0,0"
+                                                                              RecognizesAccessKey="True"
+                                                                              SnapsToDevicePixels="True"
+                                                                              VerticalAlignment="Center" />
+                                                        </Grid>
+                                                    </Border>
+                                                    <ControlTemplate.Triggers>
+                                                        <Trigger Property="IsChecked"
+                                                                 Value="True">
+                                                            <Setter Property="Data"
+                                                                    TargetName="arrow"
+                                                                    Value="M19.091797,14.970703L10,5.888672 0.908203,14.970703 0.029297,14.091797 10,4.111328 19.970703,14.091797z" />
+                                                        </Trigger>
+                                                        <Trigger Property="IsMouseOver"
+                                                                 Value="True">
+                                                            <Setter Property="Foreground"
+                                                                    TargetName="arrow"
+                                                                    Value="{DynamicResource SystemControlPageTextBaseMediumBrush}" />
+                                                        </Trigger>
+                                                        <Trigger Property="IsPressed"
+                                                                 Value="True">
+                                                            <Setter Property="Foreground"
+                                                                    TargetName="arrow"
+                                                                    Value="{DynamicResource SystemControlHighlightBaseMediumLowBrush}" />
+                                                        </Trigger>
+                                                        <Trigger Property="IsEnabled"
+                                                                 Value="False">
+                                                            <Setter Property="Foreground"
+                                                                    TargetName="arrow"
+                                                                    Value="{DynamicResource SystemControlDisabledBaseMediumLowBrush}" />
+                                                        </Trigger>
+                                                    </ControlTemplate.Triggers>
+                                                </ControlTemplate>
+                                            </Setter.Value>
+                                        </Setter>
+                                    </Style>
+                                </Setter.Value>
+                            </Setter>
+                        </Trigger>
+                        <Trigger Property="ExpandDirection"
+                                 Value="Left">
+                            <Setter Property="DockPanel.Dock"
+                                    TargetName="ExpandSite"
+                                    Value="Left" />
+                            <Setter Property="DockPanel.Dock"
+                                    TargetName="HeaderSite"
+                                    Value="Right" />
+                            <Setter Property="Style"
+                                    TargetName="HeaderSite">
+                                <Setter.Value>
+                                    <Style TargetType="{x:Type ToggleButton}">
+                                        <Setter Property="Template">
+                                            <Setter.Value>
+                                                <ControlTemplate TargetType="{x:Type ToggleButton}">
+                                                    <ControlTemplate.Resources>
+                                                        <StreamGeometry x:Key="ChevronDown">M18.935547,4.560547L19.814453,5.439453 10,15.253906 0.185547,5.439453 1.064453,4.560547 10,13.496094z</StreamGeometry>
+                                                        <StreamGeometry x:Key="ChevronUp">M19.091797,14.970703L10,5.888672 0.908203,14.970703 0.029297,14.091797 10,4.111328 19.970703,14.091797z</StreamGeometry>
+                                                    </ControlTemplate.Resources>
+                                                    <Border Padding="{TemplateBinding Padding}">
+                                                        <Grid Background="Transparent"
+                                                              SnapsToDevicePixels="False">
+                                                            <Grid.RowDefinitions>
+                                                                <RowDefinition Height="Auto" />
+                                                                <RowDefinition Height="*" />
+                                                            </Grid.RowDefinitions>
+                                                            <Grid>
+                                                                <Grid.LayoutTransform>
+                                                                    <TransformGroup>
+                                                                        <RotateTransform Angle="90" />
+                                                                    </TransformGroup>
+                                                                </Grid.LayoutTransform>
+                                                                <ui:FontIconFallback x:Name="arrow"
+                                                                                     Data="M18.935547,4.560547L19.814453,5.439453 10,15.253906 0.185547,5.439453 1.064453,4.560547 10,13.496094z"
+                                                                                     Foreground="{DynamicResource SystemControlForegroundBaseHighBrush}"
+                                                                                     FontSize="12"
+                                                                                     FontFamily="{DynamicResource SymbolThemeFontFamily}"
+                                                                                     HorizontalAlignment="Center"
+                                                                                     SnapsToDevicePixels="False"
+                                                                                     VerticalAlignment="Center" />
+                                                            </Grid>
+                                                            <ContentPresenter ContentTemplate="{TemplateBinding ContentTemplate}"
+                                                                              Content="{TemplateBinding Content}"
+                                                                              ContentStringFormat="{TemplateBinding ContentStringFormat}"
+                                                                              HorizontalAlignment="Center"
+                                                                              Margin="0,4,0,0"
+                                                                              Grid.Row="1"
+                                                                              RecognizesAccessKey="True"
+                                                                              SnapsToDevicePixels="True"
+                                                                              VerticalAlignment="Top" />
+                                                        </Grid>
+                                                    </Border>
+                                                    <ControlTemplate.Triggers>
+                                                        <Trigger Property="IsChecked"
+                                                                 Value="True">
+                                                            <Setter Property="Data"
+                                                                    TargetName="arrow"
+                                                                    Value="M19.091797,14.970703L10,5.888672 0.908203,14.970703 0.029297,14.091797 10,4.111328 19.970703,14.091797z" />
+                                                        </Trigger>
+                                                        <Trigger Property="IsMouseOver"
+                                                                 Value="True">
+                                                            <Setter Property="Foreground"
+                                                                    TargetName="arrow"
+                                                                    Value="{DynamicResource SystemControlPageTextBaseMediumBrush}" />
+                                                        </Trigger>
+                                                        <Trigger Property="IsPressed"
+                                                                 Value="True">
+                                                            <Setter Property="Foreground"
+                                                                    TargetName="arrow"
+                                                                    Value="{DynamicResource SystemControlHighlightBaseMediumLowBrush}" />
+                                                        </Trigger>
+                                                        <Trigger Property="IsEnabled"
+                                                                 Value="False">
+                                                            <Setter Property="Foreground"
+                                                                    TargetName="arrow"
+                                                                    Value="{DynamicResource SystemControlDisabledBaseMediumLowBrush}" />
+                                                        </Trigger>
+                                                    </ControlTemplate.Triggers>
+                                                </ControlTemplate>
+                                            </Setter.Value>
+                                        </Setter>
+                                    </Style>
+                                </Setter.Value>
+                            </Setter>
+                        </Trigger>
+                        <Trigger Property="IsEnabled"
+                                 Value="False">
+                            <Setter Property="Foreground"
+                                    Value="{DynamicResource SystemControlDisabledBaseMediumLowBrush}" />
+                        </Trigger>
+                    </ControlTemplate.Triggers>
+                </ControlTemplate>
+            </Setter.Value>
+        </Setter>
+    </Style>
+
+    <!-- DataGrid -->
+
+    <Style TargetType="{x:Type DataGridColumnHeader}"
+           x:Key="DataGridColumnHeaderBase">
+        <Setter Property="Foreground"
+                Value="{StaticResource DarkBlue}" />
+        <Setter Property="BorderThickness"
+                Value="0,0,0,1" />
+        <Setter Property="BorderBrush"
+                Value="{StaticResource MyWhiteSmoke}" />
+        <Setter Property="FontSize"
+                Value="12" />
+        <Setter Property="Padding"
+                Value="10,6" />
+    </Style>
+
+    <Style TargetType="{x:Type DataGridCell}"
+           x:Key="DataGridCellBase">
+        <Setter Property="ui:FocusVisualHelper.UseSystemFocusVisuals"
+                Value="True" />
+        <Setter Property="ui:FocusVisualHelper.FocusVisualMargin"
+                Value="0" />
+        <Setter Property="ui:FocusVisualHelper.FocusVisualPrimaryBrush"
+                Value="{StaticResource Teal}" />
+        <Setter Property="ui:FocusVisualHelper.FocusVisualSecondaryBrush"
+                Value="{StaticResource Teal}" />
+        <Setter Property="ui:FocusVisualHelper.FocusVisualPrimaryThickness"
+                Value="1" />
+        <Setter Property="ui:FocusVisualHelper.FocusVisualSecondaryThickness"
+                Value="1" />
+        <Style.Triggers>
+            <Trigger Property="IsSelected"
+                     Value="True">
+                <Setter Property="Background"
+                        Value="{StaticResource Transparent}" />
+                <Setter Property="BorderBrush"
+                        Value="{StaticResource Transparent}" />
+            </Trigger>
+        </Style.Triggers>
+    </Style>
+
+    <Style TargetType="DataGrid"
+           x:Key="DataGridBase">
+        <Setter Property="AutoGenerateColumns"
+                Value="False" />
+        <Setter Property="SelectionMode"
+                Value="Single" />
+        <Setter Property="SelectionUnit"
+                Value="FullRow" />
+        <Setter Property="VerticalGridLinesBrush"
+                Value="{StaticResource Transparent}" />
+        <Setter Property="HorizontalGridLinesBrush"
+                Value="{StaticResource MyWhiteSmoke}" />
+        <Setter Property="Background"
+                Value="{StaticResource Transparent}" />
+        <Setter Property="CanUserAddRows"
+                Value="False" />
+        <Setter Property="BorderBrush"
+                Value="{StaticResource Transparent}" />
+        <Setter Property="RowHeaderWidth"
+                Value="0" />
+        <Setter Property="CellStyle"
+                Value="{StaticResource DataGridCellBase}" />
+        <Setter Property="ColumnHeaderStyle"
+                Value="{StaticResource DataGridColumnHeaderBase}" />
+        <Setter Property="ui:FocusVisualHelper.UseSystemFocusVisuals"
+                Value="True" />
+        <Setter Property="ui:FocusVisualHelper.FocusVisualMargin"
+                Value="0" />
+        <Setter Property="ui:FocusVisualHelper.FocusVisualPrimaryBrush"
+                Value="{StaticResource Teal}" />
+        <Setter Property="ui:FocusVisualHelper.FocusVisualSecondaryBrush"
+                Value="{StaticResource Teal}" />
+        <Setter Property="ui:FocusVisualHelper.FocusVisualPrimaryThickness"
+                Value="1" />
+        <Setter Property="ui:FocusVisualHelper.FocusVisualSecondaryThickness"
+                Value="1" />
+    </Style>
+
+    <!-- RadioButton -->
+
+    <Style TargetType="RadioButton"
+           BasedOn="{StaticResource DefaultRadioButtonStyle}"
+           x:Key="RadioButtonBase">
+        <Setter Property="ui:FocusVisualHelper.UseSystemFocusVisuals"
+                Value="True" />
+        <Setter Property="ui:FocusVisualHelper.FocusVisualMargin"
+                Value="0" />
+        <Setter Property="ui:FocusVisualHelper.FocusVisualPrimaryBrush"
+                Value="{StaticResource Teal}" />
+        <Setter Property="ui:FocusVisualHelper.FocusVisualSecondaryBrush"
+                Value="{StaticResource Teal}" />
+        <Setter Property="ui:FocusVisualHelper.FocusVisualPrimaryThickness"
+                Value="1" />
+        <Setter Property="ui:FocusVisualHelper.FocusVisualSecondaryThickness"
+                Value="1" />
+        <Setter Property="Template"
+                Value="{StaticResource RadioButtonTemplate}" />
+        <Setter Property="FontSize"
+                Value="14" />
+        <Setter Property="Foreground"
+                Value="{StaticResource DimGray}" />
+        <Setter Property="Margin"
+                Value="5,2.5,5,20" />
+        <Setter Property="VerticalAlignment"
+                Value="Center" />
+        <Setter Property="VerticalContentAlignment"
+                Value="Center" />
+        <Setter Property="Padding"
+                Value="10,0" />
+    </Style>
+
+</ResourceDictionary>

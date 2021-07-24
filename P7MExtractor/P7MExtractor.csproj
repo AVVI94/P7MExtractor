@@ -1,0 +1,37 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <OutputType>WinExe</OutputType>
+    <TargetFramework>net5.0-windows10.0.18362.0</TargetFramework>
+    <UseWPF>true</UseWPF>
+    <StartupObject>P7MExtractor.App</StartupObject>
+    <ApplicationIcon>unpacking.ico</ApplicationIcon>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <None Remove="Resources\Images\cert.jpg" />
+    <None Remove="Resources\Images\CloseIcon.png" />
+    <None Remove="Resources\Images\file.jpg" />
+    <None Remove="Resources\Images\FileSelected.png" />
+    <None Remove="Resources\Images\FileUnselected.png" />
+    <None Remove="Resources\Images\Folder.png" />
+    <None Remove="Resources\Images\Medal.png" />
+    <None Remove="Resources\Images\save.jpg" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <PackageReference Include="ModernWpfUI" Version="0.9.4" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Resource Include="Resources\Images\cert.jpg" />
+    <Resource Include="Resources\Images\CloseIcon.png" />
+    <Resource Include="Resources\Images\file.jpg" />
+    <Resource Include="Resources\Images\FileSelected.png" />
+    <Resource Include="Resources\Images\FileUnselected.png" />
+    <Resource Include="Resources\Images\Folder.png" />
+    <Resource Include="Resources\Images\Medal.png" />
+    <Resource Include="Resources\Images\save.jpg" />
+  </ItemGroup>
+
+</Project>

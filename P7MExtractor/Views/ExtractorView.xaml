@@ -1,0 +1,88 @@
+﻿<UserControl x:Class="P7MExtractor.Views.ExtractorView"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+             xmlns:conv="clr-namespace:P7MExtractor.Others"
+             xmlns:local="clr-namespace:P7MExtractor.Views"
+             mc:Ignorable="d"
+             d:DesignHeight="450"
+             d:DesignWidth="800"
+             xmlns:ui="http://schemas.modernwpf.com/2019">
+    <UserControl.Resources>
+        <ResourceDictionary>
+            <conv:ObjectIsCert_Bool x:Key="ObjectIsCertConverter" />
+        </ResourceDictionary>
+    </UserControl.Resources>
+    <Grid>
+        <StackPanel Orientation="Vertical"
+                    Margin="50 0 50 0">
+            <TextBlock Text="{DynamicResource ExtractorView_CaptionText_H2}"
+                       Style="{StaticResource H2}" />
+            <Border Background="{StaticResource MyWhiteSmoke}"
+                    CornerRadius="2"
+                    AllowDrop="True">
+                <StackPanel Orientation="Vertical">
+                    <DockPanel>
+                        <ui:GridView ItemContainerStyle="{DynamicResource GridViewItemContainerStyle1}"
+                                     ItemsSource="{Binding ExtractedObjects, UpdateSourceTrigger=PropertyChanged}"
+                                     Style="{StaticResource GridViewBase}"
+                                     SelectedItem="{Binding SelectedItem, Mode=TwoWay}"
+                                     BorderThickness="0">
+                            <ui:GridView.ItemTemplate>
+                                <DataTemplate>
+                                    <StackPanel Orientation="Vertical">
+                                        <Image Width="64"
+                                               Height="92"
+                                               Margin="5,2.5"
+                                               DockPanel.Dock="Top"
+                                               VerticalAlignment="Top">
+                                            <Image.Style>
+                                                <Style TargetType="Image">
+                                                    <Style.Triggers>
+                                                        <DataTrigger Binding="{Binding ObjectType}"
+                                                                     Value="1">
+                                                            <DataTrigger.Setters>
+                                                                <Setter Property="Source"
+                                                                        Value="/Resources/Images/cert.jpg" />
+                                                            </DataTrigger.Setters>
+                                                        </DataTrigger>
+                                                        <DataTrigger Binding="{Binding ObjectType}"
+                                                                     Value="0">
+                                                            <DataTrigger.Setters>
+                                                                <Setter Property="Source"
+                                                                        Value="/Resources/Images/file.jpg" />
+                                                            </DataTrigger.Setters>
+                                                        </DataTrigger>
+                                                    </Style.Triggers>
+                                                </Style>
+                                            </Image.Style>
+                                        </Image>
+                                        <TextBlock Text="{Binding DisplayName}"
+                                                   Style="{StaticResource P}"
+                                                   TextWrapping="Wrap"
+                                                   Width="84"
+                                                   DockPanel.Dock="Left" />
+                                    </StackPanel>
+                                </DataTemplate>
+                            </ui:GridView.ItemTemplate>
+                        </ui:GridView>
+                    </DockPanel>
+                    <Button Style="{StaticResource ButtonWithDarkBlueIcon}"
+                            Command="{Binding SaveSelectedCommand}"
+                            DockPanel.Dock="Bottom"
+                            HorizontalAlignment="Right"
+                            BorderThickness="0"
+                            Margin="0 10 10 10">
+                        <DockPanel>
+                            <Image Source="/Resources/Images/save.jpg"
+                                   Style="{StaticResource ImageInsideButton}" />
+                            <TextBlock Text="{DynamicResource ExtractorView_SaveFileButtonText}"
+                                       Style="{StaticResource TextBlockInsideButton}" />
+                        </DockPanel>
+                    </Button>
+                </StackPanel>
+            </Border>
+        </StackPanel>
+    </Grid>
+</UserControl>

@@ -1,0 +1,15 @@
+﻿<ResourceDictionary xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+                    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+                    xmlns:system="clr-namespace:System;assembly=System.Runtime">
+    
+    <system:String x:Key="ExtractorView_CaptionText_H2">Zde si můžete soubor i s certifikáty uložit</system:String>
+    <system:String x:Key="ExtractorView_SaveFileButtonText">Uložit</system:String>
+    
+    <system:String x:Key="SelectFileView_CaptionText_H2">Vyberte P7M soubor pro rozbalení</system:String>
+    <system:String x:Key="SelectFileView_DragDropText">Sem soubor přetáhněte nebo jej vyberte</system:String>
+    <system:String x:Key="SelectFileView_SelectFileButtonText">Procházet</system:String>
+    
+    <system:String x:Key="SelectFileViewModel_ReadFileError">Došlo k chybě při čtení souboru</system:String>
+    <system:String x:Key="SelectFileViewModel_SelectFile_FilterText">P7M Soubor</system:String>
+    
+</ResourceDictionary>
