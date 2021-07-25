@@ -26,19 +26,6 @@ namespace P7MExtractor.ViewModels
             SelectFileCommand = new GenericCommand(SelectFile);
         }
 
-        public async Task ReadFile()
-        {
-            try
-            {
-                _signedFile.ExtractedFileBytes = await File.ReadAllBytesAsync(_signedFile.FilePath);
-            }
-            catch (Exception ex)
-            {
-                MessageBox.Show(ResourceManager.FindResource("SelectFileViewModel_ReadFileError") + Environment.NewLine + ex.Message);
-                return;
-            }
-        }
-
         public void SelectFile()
         {
             OpenFileDialog dialog = new();

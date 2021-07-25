@@ -42,11 +42,8 @@ namespace P7MExtractor.ViewModels
             SignedCms s = new();
             s.Decode(new ContentInfo(File.ReadAllBytes(_signedFile.FilePath)).Content);
 
-            _signedFile.CertificatesCollection = s.Certificates;
-            _signedFile.ExtractedFileBytes = s.ContentInfo.Content;
-
-            ExtractedObjects.Add(new(_signedFile.ExtractedFileBytes, _signedFile.FileNameWithoutP7M, 0));
-            foreach (var cert in _signedFile.CertificatesCollection)
+            ExtractedObjects.Add(new(s.ContentInfo.Content, _signedFile.FileNameWithoutP7M, 0));
+            foreach (var cert in s.Certificates)
             {
                 ExtractedObjects.Add(new(cert, cert.GetNameInfo(X509NameType.SimpleName, false), 1));
             }
@@ -85,7 +82,7 @@ namespace P7MExtractor.ViewModels
 
         async Task SaveFile(string path)
         {
-            await File.WriteAllBytesAsync(path, _signedFile.ExtractedFileBytes);
+            await File.WriteAllBytesAsync(path, (byte[])SelectedItem.ExtractedObject);
         }
 
         async Task SaveCert(string path)

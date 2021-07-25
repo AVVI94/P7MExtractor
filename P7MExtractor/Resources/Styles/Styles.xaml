@@ -1,8 +1,21 @@
 ﻿<ResourceDictionary xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
                     xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
-                    xmlns:local="clr-namespace:P7MExtractor.Resources"
-                    xmlns:ui="http://schemas.modernwpf.com/2019">
+                    xmlns:ui="http://schemas.modernwpf.com/2019"
+                    xmlns:system="clr-namespace:System;assembly=mscorlib"
+                    xmlns:local="clr-namespace:ModernWpf.Controls;assembly=ModernWpf.Controls">
+    
+    <FontFamily x:Key="CentralFont">Segoe UI</FontFamily>
 
+    <Style TargetType="{x:Type TextBlock}">
+        <Setter Property="FontFamily"
+                Value="{StaticResource CentralFont}" />
+    </Style>
+    <!-- Neccessary for Blend designer for usercontrols -->
+    <Style TargetType="{x:Type UserControl}">
+        <Setter Property="TextElement.FontFamily"
+                Value="{StaticResource CentralFont}" />
+    </Style>
+    
     <!-- TextBlocks -->
     <Style TargetType="TextBlock"
            x:Key="TextBlockBase">
@@ -226,6 +239,7 @@
         <Setter Property="FontFamily"
                 Value="{StaticResource CentralFont}" />
     </Style>
+   
 
     <!-- Used for Buttons located in TextBox -->
     <Style TargetType="Button"

@@ -13,8 +13,5 @@ namespace P7MExtractor.Models
         public string FilePath { get; set; }
         public string FileName { get => Path.GetFileName(FilePath); }
         public string FileNameWithoutP7M { get => string.Join(".", FileName.Split('.')?[0..^1]); }
-        public byte[] ExtractedFileBytes { get; set; }
-        public X509Certificate2Collection CertificatesCollection { get; set; }
-        public X509Certificate2 LastCertInCollection { get => CertificatesCollection?[^1]; }
     }
 }
